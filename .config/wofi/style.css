@@ -1,0 +1,39 @@
+window {
+  font-family: "Cartograph CF";
+  font-size: 17px;
+  background-color: #151515;
+  border-radius: 10px;
+  border: 1px solid #3F3F41;
+}
+
+#outer-box {
+  padding: 15px 15px;
+}
+
+#input {
+  background-color: #151515;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: none;
+}
+
+#text:selected {
+  color: white;
+}
+
+#entry {
+  padding: 10px 10px;
+}
+
+#entry:selected {
+  background-color: #262626; 
+  border-radius: 5px;
+  outline: none;
+}
+
+#img {
+  margin-right: 50px;
+}
