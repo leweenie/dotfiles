@@ -1,6 +1,6 @@
 # -------------------- INITIAL LOAD ---------------------
 
-fastfetch
+# fastfetch
 # (cat ~/.cache/wal/sequences &) 
 
 # ------------------ PRE-CONFIGURATION ------------------ 
@@ -67,7 +67,7 @@ alias token='cat .token'
 
 # browse web
 alias ss='function _search() { firefox --new-window "https://www.google.com/search?q=$*"; }; _search --quiet'
-alias fast="fastfetch"
+alias f="fastfetch"
 
 # ----------------------- ENV VARS ----------------------
 

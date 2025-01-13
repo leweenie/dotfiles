@@ -1,0 +1,13 @@
+* {
+  /* System Font (SF Pro) */
+  font-family: SF Pro, FontAwesome6Free, SymbolsNerdFont;
+  font-size: 11px;
+}
+
+#workspaces button {
+  margin: 0px 5px;
+}
+
+#workspaces button.active {
+  background-color: #3b3b3b;
+}
