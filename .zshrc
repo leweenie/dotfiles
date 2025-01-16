@@ -66,7 +66,7 @@ alias lt='eza --icons=auto --tree' # list folder as tree
 alias token='cat .token'
 
 # browse web
-alias ss='function _search() { firefox --new-window "https://www.google.com/search?q=$*"; }; _search --quiet'
+alias ss='function _search() { firefox --new-window "https://www.google.com/search?q=$*"; }; _search'
 alias f="fastfetch"
 
 # ----------------------- ENV VARS ----------------------
