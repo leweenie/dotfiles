@@ -32,3 +32,10 @@ vim.keymap.set("n", "<leader>lf", "<cmd>LspStart<cr>", opts)
 
 -- clear highlight
 vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", opts)
+
+-- liveserver
+vim.keymap.set("n", "<leader>ss", "<cmd>LiveServerStart<cr>", opts)
+vim.keymap.set("n", "<leader>st", "<cmd>LiveServerStop<cr>", opts)
+
+-- misc
+vim.keymap.set("n", "<leader>bg", "<cmd>colorscheme rose-pine-main<cr>")

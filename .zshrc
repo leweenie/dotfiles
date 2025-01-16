@@ -72,3 +72,11 @@ alias f="fastfetch"
 # ----------------------- ENV VARS ----------------------
 
 export PATH="$HOME/venv/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/apollo/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
