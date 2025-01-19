@@ -1,5 +1,8 @@
 local opts = { noremap = true, silent = true }
 
+-- source file
+vim.keymap.set("n", "<leader>v", "<cmd>source %<cr>", opts)
+
 -- save file
 vim.keymap.set("n", "<C-s>", "<cmd>w!<cr>", opts)
 
@@ -23,6 +26,12 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "<S-l>", "<cmd>bn<cr>", opts) -- move buffer next
 vim.keymap.set("n", "<S-h>", "<cmd>bp<cr>", opts) -- move buffer prev
 
+-- window resize
+vim.keymap.set("n", "<A-S-k>", "<cmd>horizontal resize +5<cr>", opts) -- horizontal (taller)
+vim.keymap.set("n", "<A-S-j>", "<cmd>horizontal resize -5<cr>", opts) -- horizontal (shorter)
+vim.keymap.set("n", "<A-S-l>", "<cmd>vertical resize +10<cr>", opts)  -- vertical (wider)
+vim.keymap.set("n", "<A-S-h>", "<cmd>vertical resize -10<cr>", opts)  -- vertical (thinner)
+
 -- exit terminal mode
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
@@ -36,6 +45,3 @@ vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", opts)
 -- liveserver
 vim.keymap.set("n", "<leader>ss", "<cmd>LiveServerStart<cr>", opts)
 vim.keymap.set("n", "<leader>st", "<cmd>LiveServerStop<cr>", opts)
-
--- misc
-vim.keymap.set("n", "<leader>bg", "<cmd>colorscheme rose-pine-main<cr>")

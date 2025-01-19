@@ -1,0 +1,298 @@
+return {
+  -- {
+  --   'jesseleite/nvim-noirbuddy',
+  --   dependencies = {
+  --     { 'tjdevries/colorbuddy.nvim' }
+  --   },
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  --   config = function()
+  --     require("noirbuddy").setup {
+  --       preset = 'slate',
+  --     }
+  --   end
+  -- },
+  --
+  --
+  -- {
+  --   "slugbyte/lackluster.nvim",
+  --   priority = 1000,
+  --   init = function()
+  --     require("lackluster").setup({
+  --       disable_plugin = {},
+  --       tweak_background = {
+  --         normal = 'none', -- main background
+  --         -- normal = 'none',    -- transparent
+  --         -- normal = '#a1b2c3',    -- hexcode
+  --         -- normal = color.green,    -- lackluster color telescope = 'none', -- telescope
+  --         menu = 'none',      -- nvim_cmp, wildmenu ... (bad idea to transparent)
+  --         popup = 'none',     -- lazy, mason, whichkey ... (bad idea to transparent)
+  --       },
+  --       tweak_color = {
+  --         -- you can set a value to a custom hexcode like' #aaaa77' (hashtag required)
+  --         -- or if the value is 'default' or nil it will use lackluster's default color
+  --         -- lack = "#aaaa77",
+  --         lack = "default",
+  --         luster = "default",
+  --         orange = "default",
+  --         yellow = "default",
+  --         green = "default",
+  --         blue = "default",
+  --         red = "default",
+  --         black = "default",
+  --         gray1 = "default",
+  --         gray2 = "default",
+  --         gray3 = "default",
+  --         gray4 = "default",
+  --         gray5 = "default",
+  --         gray6 = "default",
+  --         gray7 = "default",
+  --         gray8 = "default",
+  --         gray9 = "default",
+  --       }
+  --     })
+  --
+  --     -- vim.cmd.colorscheme("lackluster-hack")
+  --     vim.cmd.colorscheme("lackluster-dark")
+  --     -- vim.cmd.colorscheme("lackluster-night")
+  --     -- !must set colorscheme after calling setup()!
+  --     -- vim.cmd.colorscheme("lackluster")
+  --     -- vim.cmd.colorscheme("lackluster-mint")
+  --   end,
+  -- },
+  --
+  --
+  -- {
+  --   "ramojus/mellifluous.nvim",
+  --   config = function()
+  --     require("mellifluous").setup({
+  --
+  --     })
+  --     vim.cmd("colorscheme mellifluous")
+  --     vim.cmd("Mellifluous toggle_transparency")
+  --
+  --     -- transparency toggle
+  --     vim.keymap.set("n", "<leader>bg", function()
+  --       vim.cmd("Mellifluous toggle_transparency")
+  --     end)
+  --   end,
+  -- },
+  --
+  --
+  -- {
+  --   "nyoom-engineering/oxocarbon.nvim",
+  --   config = function()
+  --     vim.opt.background = "dark" -- set this to dark or light
+  --     vim.cmd("colorscheme oxocarbon")
+  --     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  --     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  --     vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+  --   end
+  -- },
+  --
+  --
+  -- {
+  --   'dasupradyumna/midnight.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require('midnight').setup {
+  --       HighlightGroup = {
+  --         clear = true,
+  --         vim.cmd("colorscheme midnight")
+  --       },
+  --     }
+  --   end
+  -- },
+  --
+  --
+  -- {
+  --   'sainnhe/gruvbox-material',
+  --   config = function()
+  --     vim.g.gruvbox_material_background = 'hard'
+  --     vim.g.gruvbox_material_foreground = 'mix'
+  --     vim.g.gruvbox_material_transparent_background = 2
+  --     vim.cmd("colorscheme gruvbox-material")
+  --   end
+  -- },
+  --
+  --
+  -- {
+  --   'EdenEast/nightfox.nvim',
+  --   config = function()
+  --     require('nightfox').setup({
+  --       options = {
+  --         compile_path = vim.fn.stdpath("cache") .. "/nightfox",
+  --         compile_file_suffix = "_compiled", -- Compiled file suffix
+  --         transparent = true,                -- Disable setting background
+  --         terminal_colors = true,            -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
+  --         dim_inactive = false,              -- Non focused panes set to alternative background
+  --         module_default = true,             -- Default enable value for modules
+  --         colorblind = {
+  --           enable = false,                  -- Enable colorblind support
+  --           simulate_only = false,           -- Only show simulated colorblind colors and not diff shifted
+  --           severity = {
+  --             protan = 0,                    -- Severity [0,1] for protan (red)
+  --             deutan = 0,                    -- Severity [0,1] for deutan (green)
+  --             tritan = 0,                    -- Severity [0,1] for tritan (blue)
+  --           },
+  --         },
+  --         styles = {           -- Style to be applied to different syntax groups
+  --           comments = "NONE", -- Value is any valid attr-list value `:help attr-list`
+  --           conditionals = "NONE",
+  --           constants = "NONE",
+  --           functions = "NONE",
+  --           keywords = "NONE",
+  --           numbers = "NONE",
+  --           operators = "NONE",
+  --           strings = "NONE",
+  --           types = "NONE",
+  --           variables = "NONE",
+  --         },
+  --         inverse = { -- Inverse highlight for different types
+  --           match_paren = false,
+  --           visual = false,
+  --           search = false,
+  --         },
+  --         modules = { -- List of various plugins and additional options
+  --           -- ...
+  --         },
+  --       },
+  --       palettes = {},
+  --       specs = {},
+  --       groups = {},
+  --     })
+  --
+  --     -- setup must be called before loading
+  --     vim.cmd("colorscheme nightfox")
+  --   end
+  -- },
+  --
+  --
+  -- {
+  --   'rebelot/kanagawa.nvim',
+  --   config = function()
+  --     -- Default options:
+  --     require('kanagawa').setup({
+  --       compile = false,  -- enable compiling the colorscheme
+  --       undercurl = true, -- enable undercurls
+  --       commentStyle = { italic = true },
+  --       functionStyle = {},
+  --       keywordStyle = { italic = true },
+  --       statementStyle = { bold = true },
+  --       typeStyle = {},
+  --       transparent = true,    -- do not set background color
+  --       dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
+  --       terminalColors = true, -- define vim.g.terminal_color_{0,17}
+  --       colors = {             -- add/modify theme and palette colors
+  --         palette = {},
+  --         theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+  --       },
+  --       overrides = function(colors) -- add/modify highlights
+  --         return {}
+  --       end,
+  --       theme = "wave",  -- Load "wave" theme when 'background' option is not set
+  --       background = {   -- map the value of 'background' option to a theme
+  --         dark = "wave", -- try "dragon" !
+  --         light = "lotus"
+  --       },
+  --     })
+  --
+  --     -- setup must be called before loading
+  --     vim.cmd("colorscheme kanagawa")
+  --   end
+  -- },
+  --
+  --
+  -- {
+  --   'maxmx03/fluoromachine.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     local fm = require 'fluoromachine'
+  --
+  --     fm.setup {
+  --       glow = true,
+  --       theme = 'fluoromachine',
+  --       transparent = true,
+  --     }
+  --
+  --     vim.cmd.colorscheme 'fluoromachine'
+  --   end
+  -- },
+  --
+  --
+  -- {
+  --   'olivercederborg/poimandres.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require('poimandres').setup {
+  --       -- leave this setup function empty for default config
+  --       -- or refer to the configuration section
+  --       -- for configuration options
+  --     }
+  --   end,
+  --
+  --   -- optionally set the colorscheme within lazy config
+  --   init = function()
+  --     vim.cmd("colorscheme poimandres")
+  --   end
+  -- },
+  --
+  --
+  -- {
+  --   "craftzdog/solarized-osaka.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  -- }
+
+
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      require("tokyonight").setup({
+        transparent = true,
+        styles = {
+          floats = "transparent"
+        }
+        -- on_highlights = function(hl, c)
+        --   local prompt = "#2d3149"
+        --   hl.TelescopeNormal = {
+        --     bg = c.bg_dark,
+        --     fg = c.fg_dark,
+        --   }
+        --   hl.TelescopeBorder = {
+        --     bg = c.bg_dark,
+        --     fg = c.bg_dark,
+        --   }
+        --   hl.TelescopePromptNormal = {
+        --     bg = prompt,
+        --   }
+        --   hl.TelescopePromptBorder = {
+        --     bg = prompt,
+        --     fg = prompt,
+        --   }
+        --   hl.TelescopePromptTitle = {
+        --     bg = prompt,
+        --     fg = prompt,
+        --   }
+        --   hl.TelescopePreviewTitle = {
+        --     bg = c.bg_dark,
+        --     fg = c.bg_dark,
+        --   }
+        --   hl.TelescopeResultsTitle = {
+        --     bg = c.bg_dark,
+        --     fg = c.bg_dark,
+        --   }
+        -- end,
+      })
+      vim.cmd("colorscheme tokyonight-storm")
+    end
+  }
+}
