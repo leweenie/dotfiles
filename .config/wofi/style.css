@@ -2,9 +2,9 @@ window {
   /*font-family: "Cartograph CF";*/
   font-family: SF Pro;
   font-size: 17px;
-  background-color: #151515;
+  background-color: rgba(11, 13, 15, 1);
   border-radius: 10px;
-  border: 1px solid #3F3F41;
+  border: 1px solid rgba(63, 63, 65, 1);
 }
 
 #outer-box {
@@ -30,7 +30,7 @@ window {
 }
 
 #entry:selected {
-  background-color: #262626; 
+  background-color: #262626;
   border-radius: 5px;
   outline: none;
 }

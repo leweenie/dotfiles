@@ -10,8 +10,8 @@
     "logo": {
         "source": "~/.config/fastfetch/ascii.txt", 
         "padding": {
-	        "top": 4,
-          "right": 6
+	        "top": 2,
+          "right": 4
     }
     },
     "display": {
@@ -23,68 +23,68 @@
         "break",
         {
             "type": "os",
-            "key": " ",
+            "key": "os    ",
             "keyColor": "33",  // = color3
         },
         {
             "type": "kernel",
-            "key": " ",
+            "key": "kernel",
             "keyColor": "33",
         },
         {
             "type": "host",
             "format": "{5} {1}",
-            "key": "💻",
+            "key": "host  ",
             "keyColor": "33",
         },
         {
             "type": "packages",
             "format": "{} (pacman)",
-            "key": " ",
+            "key": "pkgs  ",
             "keyColor": "33",  
         },
         {
             "type": "wm",
-            "key": " ",
+            "key": "wm    ",
             "keyColor": "33", 
         },
-        {
-            "type": "shell",
-            "key": " ",
-            "keyColor": "33"
-        },
-        {
-            "type": "terminal",
-            "key": " ",
-            "keyColor": "33"
-        },
+        //{
+        //    "type": "shell",
+        //    "key": " ",
+        //    "keyColor": "33"
+        //},
+        //{
+        //    "type": "terminal",
+        //    "key": " ",
+        //    "keyColor": "33"
+        //},
         {
             "type": "memory",
-            "key": "󰍛 ",
+            "key": "memory",
             "keyColor": "33",
         },
-        {
-            "type": "uptime",
-              "format": "{2}h {3}m",
-            "key": " ",
-            "keyColor": "33",
-        },
-        {
-            "type": "media",
-            "key": "𝅘𝅥𝅮 ",
-            "keyColor": "33"
-        },
-        {
-            "type": "disk",
-            "format": "{1} / {2} ({3})",
-            "key": " ",
-            "keyColor": "33"
-
-        },
+        //{
+        //    "type": "uptime",
+        //      "format": "{2}h {3}m",
+        //    "key": "uptime",
+        //    "keyColor": "33",
+        //},
+        //{
+        //    "type": "media",
+        //    "key": "media",
+        //    "keyColor": "33"
+        //},
+        //{
+        //    "type": "disk",
+        //    "format": "{1} / {2} ({3})",
+        //    "key": "disk  ",
+        //    "keyColor": "33"
+        //
+        //},
         "break",
         {
             "type": "colors",
-            "symbol": "box"
+            "symbol": "circle"
         },
         "break",
     ]

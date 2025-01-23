@@ -13,6 +13,9 @@ return {
           },
         },
       },
+      {
+        "williamboman/mason.nvim"
+      }
     },
     config = function()
       -- LSP
@@ -24,6 +27,28 @@ return {
       -- python
       require 'lspconfig'.pyright.setup { capabilities = capabilities }
 
+      -- javascript/typescript
+      require 'lspconfig'.ts_ls.setup {
+        capabilities = capabilities,
+        init_options = {
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+              languages = { "javascript", "typescript", "vue" },
+            },
+          },
+        },
+        filetypes = {
+          "javascript",
+          "typescript",
+          "vue",
+        },
+      }
+
+      -- bash
+      require 'lspconfig'.bashls.setup {}
+
       local c = vim.lsp.protocol.make_client_capabilities()
       c.textDocument.completion.completionItem.snippetSupport = true
 
@@ -32,6 +57,7 @@ return {
 
       -- html
       require 'lspconfig'.superhtml.setup { capabilities = c }
+
 
       -- FORMATTING
       vim.api.nvim_create_autocmd('LspAttach', {

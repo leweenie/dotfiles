@@ -1,11 +1,12 @@
 return {
   {
     "nvim-lualine/lualine.nvim",
+    enabled = false,
     config = function()
       require('lualine').setup {
         options = {
           icons_enabled = true,
-          theme = 'tokyonight-night',
+          theme = 'vscode',
           component_separators = { left = '', right = '' },
           section_separators = { left = '', right = '' },
           disabled_filetypes = {

@@ -13,7 +13,7 @@ body::before {
   top: 0;
   left: 0;
   /*background: #f9a no-repeat url(img/anime-cherry.jpeg) center;*/
-  background: #f9a no-repeat url(img/anime-gruvbox.png) center;
+  background: #f9a no-repeat url(img/painting-ivan.jpg) center;
   /*background-color: #0B0D0F;*/
   /*background-color: #1C1B22;*/
   background-size: cover;
@@ -24,4 +24,11 @@ body::before {
 .logo {
   background-image: url(img/firefox.png) !important;
 }
+
+@-moz-document url(about:privatebrowsing){
+
+html.private div.showPrivate div.search-inner-wrapper,
+html.private div.showPrivate div.info,
+html.private div.showPrivate div.wordmark {
+  display: none !important;
 }

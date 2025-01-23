@@ -1,7 +1,7 @@
 # -------------------- INITIAL LOAD ---------------------
 
-# fastfetch
-# (cat ~/.cache/wal/sequences &) 
+fastfetch
+(cat ~/.cache/wal/sequences &) 
 
 # ------------------ PRE-CONFIGURATION ------------------ 
 
@@ -63,7 +63,7 @@ alias ld='eza -lhD --icons=auto' # long list dirs
 alias lt='eza --icons=auto --tree' # list folder as tree
 
 # token
-alias token='cat .token'
+alias token='cat $HOME/.token'
 
 # browse web
 alias ss='function _search() { firefox --new-window "https://www.google.com/search?q=$*"; }; _search'
@@ -72,6 +72,7 @@ alias f="fastfetch"
 # ----------------------- ENV VARS ----------------------
 
 export PATH="$HOME/venv/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="/home/apollo/.local/share/pnpm"

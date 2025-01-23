@@ -4,6 +4,10 @@
   font-size: 11px;
 }
 
+#waybar>box {
+  background-color: #0B0D0F;
+}
+
 #workspaces button {
   margin: 0px 5px;
 }
