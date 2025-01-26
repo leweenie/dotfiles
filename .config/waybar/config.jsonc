@@ -18,16 +18,16 @@
         "custom/media"
     ],
     "modules-right": [
-        "mpd",
+        "mpd"
         "pulseaudio",
         "network",
         "power-profiles-daemon",
         "cpu",
         "memory",
-        "temperature",
+        //"temperature",
         "backlight",
         "keyboard-state",
-        "hyprland/language",
+        //"hyprland/language",
         "battery",
         "battery#bat2",
         "tray",
@@ -106,7 +106,7 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 11,
         "spacing": 10
     },
     "clock": {
@@ -117,10 +117,12 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": false,
+        "interval": 3
     },
     "memory": {
-        "format": "{}% "
+        "format": "{used}GB ",
+        "interval": 3
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -166,19 +168,20 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "{essid} ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr} ({signalStrength}%)",
+        "interval": 3
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-muted": " ",
         "format-source": "",
         "format-source-muted": "",
         "format-icons": {

@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    enabled = true,
     dependencies = {
       {
         "folke/lazydev.nvim",
@@ -13,9 +14,6 @@ return {
           },
         },
       },
-      {
-        "williamboman/mason.nvim"
-      }
     },
     config = function()
       -- LSP
@@ -26,6 +24,9 @@ return {
 
       -- python
       require 'lspconfig'.pyright.setup { capabilities = capabilities }
+
+      -- js, etc.
+      require 'lspconfig'.biome.setup { capabilities = capabilities }
 
       -- javascript/typescript
       require 'lspconfig'.ts_ls.setup {
@@ -77,4 +78,18 @@ return {
       })
     end
   },
+  {
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup({
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+          }
+        }
+      })
+    end
+  }
 }

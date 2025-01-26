@@ -4,6 +4,24 @@
   font-size: 11px;
 }
 
+.modules-right {
+  padding-right: 10px;
+}
+
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#backlight,
+#battery,
+#tray {
+  padding: 0px 2px;
+}
+
+#tray {
+  margin-left: 4px;
+}
+
 #waybar>box {
   background-color: #0B0D0F;
 }
