@@ -18,7 +18,7 @@
         "custom/media"
     ],
     "modules-right": [
-        "mpd"
+        "mpd",
         "pulseaudio",
         "network",
         "power-profiles-daemon",

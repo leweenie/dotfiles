@@ -2,6 +2,8 @@ set window-title-basename "true"
 
 set selection-clipboard "clipboard"
 
+set font "JetBrains Mono Nerd Font"
+
 map <C-i> recolor
 
 # Dracula color theme for Zathura
@@ -38,7 +40,7 @@ set statusbar-fg                "#f8f8f2" # Foreground
 set highlight-color             "#ffffff00" # Orange
 set highlight-active-color      "#ff79c6" # Pink
 
-set default-bg                  "#282a36ff" # Background
+set default-bg                  "#0B0D0F" # Background
 set default-fg                  "#f8f8f200" # Foreground
 
 set render-loading              true
