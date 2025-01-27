@@ -84,6 +84,7 @@
         "break",
         {
             "type": "colors",
+            //"symbol": "circle"
             "symbol": "circle"
         },
         "break",
