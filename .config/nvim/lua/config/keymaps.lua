@@ -45,3 +45,6 @@ vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", opts)
 -- liveserver
 vim.keymap.set("n", "<leader>ss", "<cmd>LiveServerStart<cr>", opts)
 vim.keymap.set("n", "<leader>st", "<cmd>LiveServerStop<cr>", opts)
+
+-- dashboard
+vim.keymap.set("n", "<leader>gh", "<cmd>Alpha<cr>", opts)

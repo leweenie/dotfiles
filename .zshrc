@@ -68,6 +68,7 @@ alias token='cat $HOME/.token'
 # browse web
 alias ss='function _search() { firefox --new-window "https://www.google.com/search?q=$*"; }; _search'
 alias f="fastfetch"
+alias tt="ttyper"
 
 # ----------------------- ENV VARS ----------------------
 
