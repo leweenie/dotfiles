@@ -26,7 +26,7 @@ window {
 }
 
 #text:selected {
-  color: @color7;
+  color: @color8;
 }
 
 #entry {
@@ -36,7 +36,8 @@ window {
 
 #entry:selected {
   /*background-color: #262626;*/
-  background-color: @color8;
+  /*background-color: @color8;*/
+  background-color: @color13;
   border-radius: 5px;
   outline: none;
 }
