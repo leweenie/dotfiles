@@ -66,9 +66,10 @@ alias lt='eza --icons=auto --tree' # list folder as tree
 alias token='cat $HOME/.token'
 
 # browse web
-alias ss='function _search() { firefox --new-window "https://www.google.com/search?q=$*"; }; _search'
+alias ss='function _search() { nohup firefox --new-window "https://www.google.com/search?q=$*"; rm -rf nohup.out;}; _search'
 alias f="fastfetch"
 alias tt="ttyper"
+alias opr="open-curr-repo"
 
 # ----------------------- ENV VARS ----------------------
 
