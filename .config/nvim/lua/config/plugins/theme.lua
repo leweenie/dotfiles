@@ -55,4 +55,29 @@ return {
       local color = require('base16-colorscheme').colors.base01
     end
   },
+  -- {
+  --   "RRethy/base16-nvim",
+  --   config = function()
+  --     require('base16-colorscheme').setup({
+  --       base00 = 'none',
+  --       -- base01 = '#121212',
+  --       base01 = 'none',
+  --       base02 = '#222222',
+  --       base03 = '#333333',
+  --       base04 = '#999999',
+  --       -- base05 = '#C1C1C1',
+  --       base06 = '#999999',
+  --       base07 = '#C1C1C1',
+  --       base08 = '#5F8787',
+  --       base09 = '#ABABAB',
+  --       base0A = '#A06666',
+  --       base0B = '#DD9998',
+  --       base0C = '#ABABAB',
+  --       base0D = '#888888',
+  --       base0E = '#999999',
+  --       base0F = '#444444',
+  --     })
+  --     local color = require('base16-colorscheme').colors.base01
+  --   end
+  -- },
 }

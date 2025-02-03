@@ -48,3 +48,31 @@ vim.keymap.set("n", "<leader>st", "<cmd>LiveServerStop<cr>", opts)
 
 -- dashboard
 vim.keymap.set("n", "<leader>gh", "<cmd>Alpha<cr>", opts)
+
+-- color converter
+vim.keymap.set('n', '<leader>cc', function()
+  vim.cmd('execute "normal! \\<Plug>ColorConvertCycle"')
+end, opts)
+
+
+-- harpoon
+local harpoon = require("harpoon")
+
+-- REQUIRED
+harpoon:setup()
+-- REQUIRED
+
+
+-- local extensions = require("harpoon.extensions");
+-- harpoon:extend(extensions.builtins.navigate_with_number());
+
+vim.keymap.set("n", "<leader>a", function()
+  harpoon:list():add()
+  print("Added file: " .. vim.fn.expand('%:t'))
+end)
+vim.keymap.set("n", "<leader>e", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+-- vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
+-- vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end)
+-- vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end)
+-- vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)

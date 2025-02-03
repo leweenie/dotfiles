@@ -14,6 +14,7 @@ vim.cmd("set ic hls is")
 vim.cmd("set splitright")
 vim.cmd("set splitbelow")
 vim.opt.fillchars = { eob = " " }
+vim.opt.statusline = "%t%{&modified ? ' [+]' : ''}"
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking text",
