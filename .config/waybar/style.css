@@ -39,6 +39,7 @@
 }
 
 #workspaces button.active {
-  /*background-color: #3b3b3b;*/
-  background-color: @color5;
+  background-color: #3b3b3b;
+  /*background-color: @color5;*/
+  /*background-color: @color8;*/
 }

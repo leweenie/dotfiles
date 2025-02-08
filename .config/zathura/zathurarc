@@ -2,7 +2,7 @@ set window-title-basename "true"
 
 set selection-clipboard "clipboard"
 
-set font "JetBrains Mono Nerd Font"
+set font "IosevkaTerm Nerd Font Mono"
 
 map <C-i> recolor
 
@@ -40,7 +40,7 @@ set statusbar-fg                "#f8f8f2" # Foreground
 set highlight-color             "#ffffff00" # Orange
 set highlight-active-color      "#ff79c6" # Pink
 
-set default-bg                  "#0B0D0F" # Background
+set default-bg                  "#050505" # Background
 set default-fg                  "#f8f8f200" # Foreground
 
 set render-loading              true
@@ -51,7 +51,7 @@ set render-loading-bg           "#f8f8f2" # Foreground
 # Recolor mode settings
 #
 
-set recolor-lightcolor          "#0B0D0F" # Background
+set recolor-lightcolor          "#050505" # Background
 set recolor-darkcolor           "#f8f8f2" # Foreground
 
 #
