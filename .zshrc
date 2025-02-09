@@ -72,6 +72,9 @@ alias ss='function _search() { nohup zen-browser --new-window "https://www.googl
 alias f="fastfetch"
 alias tt="ttyper"
 alias opr="open-curr-repo"
+alias tree="cbonsai -il -M 10 -L 55 -c o -t .04"
+alias y="yazi"
+alias sp="spotify_player"
 
 # ----------------------- ENV VARS ----------------------
 
