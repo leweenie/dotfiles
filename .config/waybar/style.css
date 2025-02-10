@@ -1,9 +1,7 @@
-@import "theme.css";
+@import "/home/apollo/.cache/wal/colors-waybar.css";
 
 * {
-  /* System Font (SF Pro) */
   font-family: SF Pro, FontAwesome6Free, SymbolsNerdFont;
-  font-size: 11px;
   color: @color15;
 }
 
@@ -19,27 +17,46 @@
 #battery,
 #tray {
   padding: 0px 2px;
+  padding-left: 5px;
+  font-size: 11px;
 }
 
 #tray {
   margin-left: 4px;
+  font-size: 11px;
 }
 
 #waybar>box {
-  /*background-color: #0B0D0F;*/
   background-color: @color0;
+  font-size: 11px;
+  padding: 0px 0px;
 }
 
 #workspaces {
-  margin: 5px 10px;
+  margin: 5px 0px;
+  margin-left: 10px;
+  padding: 6px 10px;
+  margin-top: 5px;
+  margin-bottom: 4px;
+  border-radius: 20px;
 }
 
 #workspaces button {
-  padding: 0 10px;
+  font-size: 4px;
+  min-height: 5px;
+  background-color: #474747;
+  padding: 0;
+  margin: 0px 10px;
+  min-width: 9px;
+  border-radius: 20px;
 }
 
 #workspaces button.active {
-  background-color: #3b3b3b;
-  /*background-color: @color5;*/
-  /*background-color: @color8;*/
+  background-color: rgba(239, 237, 225, .85);
+  /*min-width: 30px;*/
+  border-radius: 20px;
+}
+
+#window {
+  /*margin-left: 30px;*/
 }

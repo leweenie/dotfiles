@@ -15,42 +15,35 @@
     ],
     "modules-center": [
         //"idle_inhibitor",
-        "clock",
-        "custom/media"
+        "clock"
     ],
     "modules-right": [
         "mpd",
-        "pulseaudio",
-        "network",
+        //"pulseaudio",
         "power-profiles-daemon",
         "cpu",
         "memory",
         //"temperature",
-        "backlight",
+        //"backlight",
         "keyboard-state",
         //"hyprland/language",
+        //"network",
         "battery",
         "battery#bat2",
         "tray",
         "custom/power"
     ],
     // Modules configuration
-    // "hyprland/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+    "hyprland/workspaces": {
+      "disable-scroll": true,
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+        "default": "",  // Small dot for inactive workspaces
+        "active": ""    // Thin pill-like icon for active workspace
+      },
+      "sort-by-number": true
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -121,7 +114,8 @@
         "interval": 3
     },
     "memory": {
-        "format": "{used}GB ",
+        //"format": "{used}GB ",
+        "format": "{used}GB ",
         "interval": 3
     },
     "temperature": {
@@ -139,18 +133,23 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
+             "good": 95,
             "warning": 30,
             "critical": 15
         },
+        //"format": "{capacity}% {icon}",
+        //"format-full": "{capacity}% {icon}",
+        //"format-charging": "{capacity}% ",
+        //"format-plugged": "{capacity}% ",
+        //"format-alt": "{time} {icon}",
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format-charging": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
+        "interval": 1
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -168,9 +167,11 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ",
+        //"format-wifi": "{essid} ",
+        "format-wifi": "",
         "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        //"tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format": "{essid}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr} ({signalStrength}%)",
@@ -195,18 +196,6 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
 		//  "custom/power": {
 		//      "format" : "⏻ ",
 		//"tooltip": false,
