@@ -75,6 +75,7 @@ alias opr="open-curr-repo"
 alias tree="cbonsai -il -M 10 -L 55 -c o -t .04"
 alias y="yazi"
 alias sp="spotify_player"
+alias ws="wallpaper-switcher"
 
 # ----------------------- ENV VARS ----------------------
 
