@@ -15,7 +15,22 @@ return {
         },
       },
     },
+
     config = function()
+      -- Icon Change
+      local signs = { Error = "", Warn = "", Info = "", Hint = "" }
+      for type, icon in pairs(signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+      end
+
+      -- Diagnostic Displays
+      vim.diagnostic.config({
+        virtual_text = true,
+        signs = true,
+        underline = false,
+        update_in_insert = false,
+      })
       -- LSP
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
@@ -77,7 +92,9 @@ return {
         end
       })
     end
+
   },
+
   {
     "williamboman/mason.nvim",
     config = function()
