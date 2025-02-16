@@ -52,17 +52,11 @@
 }
 
 #workspaces button.active {
-  /*background-color: rgba(239, 237, 225, .85);*/
-  /*background-color: @color10;*/
-  background-color: @color4;
+  background-color: rgba(239, 237, 225, .85);
   /*min-width: 30px;*/
   border-radius: 20px;
 }
 
 #window {
   /*margin-left: 30px;*/
-}
-
-#spotify {
-  font-size: 50px;
 }

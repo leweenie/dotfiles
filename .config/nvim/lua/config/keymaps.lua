@@ -33,7 +33,7 @@ vim.keymap.set("n", "<A-S-l>", "<cmd>vertical resize +10<cr>", opts)  -- vertica
 vim.keymap.set("n", "<A-S-h>", "<cmd>vertical resize -10<cr>", opts)  -- vertical (thinner)
 
 -- exit terminal mode
-vim.keymap.set("t", "<esc>", "<c-\\><c-n>")
+vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
 -- start and stop lsp
 vim.keymap.set("n", "<leader>ls", "<cmd>LspStop<cr>", opts)
@@ -76,17 +76,3 @@ vim.keymap.set("n", "<leader>e", function() harpoon.ui:toggle_quick_menu(harpoon
 -- vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end)
 -- vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end)
 -- vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
-
--- local term_win = nil
---
--- vim.keymap.set("n", "<C-j>", function()
---   if term_win and vim.api.nvim_win_is_valid(term_win) then
---     vim.api.nvim_win_close(term_win, true)
---     term_win = nil
---   else
---     vim.cmd("split | resize 10 | term")
---     term_win = vim.api.nvim_get_current_win()
---     vim.cmd("set nonumber norelativenumber")
---     -- vim.cmd("startinsert")
---   end
--- end)

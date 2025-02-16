@@ -76,7 +76,6 @@ alias tree="cbonsai -il -M 10 -L 55 -c o -t .04"
 alias y="yazi"
 alias sp="spotify_player"
 alias ws="wallpaper-switcher"
-alias notes='cd ~/notes && nvim $(date +"notes-%Y-%m-%d-%s").txt'
 
 # ----------------------- ENV VARS ----------------------
 
