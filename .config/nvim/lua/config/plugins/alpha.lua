@@ -131,7 +131,7 @@ return {
       dashboard.section.buttons.val = {
         dashboard.button("n", "  new file", ":ene<CR>"),
         dashboard.button("s", "  restore session", ":SessionRestore<CR>"),
-        dashboard.button("q", "  quit", ":qa<CR>"),
+        dashboard.button("q", "  quit", ":qa!<CR>"),
       }
 
       -- Set footer

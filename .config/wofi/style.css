@@ -32,7 +32,8 @@ window {
 }
 
 #entry:selected {
-  background-color: #3b3b3b;
+  /*background-color: #3b3b3b;*/
+  background-color: @color10;
   border-radius: 5px;
   outline: none;
 }

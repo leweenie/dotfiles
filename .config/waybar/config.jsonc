@@ -15,9 +15,10 @@
     ],
     "modules-center": [
         //"idle_inhibitor",
-        "clock"
+        "clock",
     ],
     "modules-right": [
+        "custom/spotify",
         "mpd",
         //"pulseaudio",
         "power-profiles-daemon",
@@ -208,4 +209,12 @@
 		//	"hibernate": "systemctl hibernate"
 		//}
 		//  }
+"custom/spotify": {
+    "exec": "python /home/apollo/.config/waybar/custom_modules/mediaplayer.py --player spotify",
+    "format": "{}  ",
+    "return-type": "json",
+    "on-click": "playerctl --player=spotify play-pause",
+    "on-scroll-up": "playerctl --player=spotify volume $(playerctl --player=spotify volume | awk '{print $1 + 0.1}')",
+    "on-scroll-down": "playerctl --player=spotify volume $(playerctl --player=spotify volume | awk '{print $1 - 0.1}')"
+}
 }
