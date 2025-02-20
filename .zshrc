@@ -76,12 +76,14 @@ alias tree="cbonsai -il -M 10 -L 55 -c o -t .04"
 alias y="yazi"
 alias sp="spotify_player"
 alias ws="wallpaper-switcher"
-alias notes='cd ~/notes && nvim $(date +"notes-%Y-%m-%d-%s").txt'
+alias notes='cd ~/notes && nvim $(date +"notes-%Y-%m-%d-%s").md'
+alias update="sudo pacman -Syu; yay -Syu"
 
 # ----------------------- ENV VARS ----------------------
 
 export PATH="$HOME/venv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="/home/apollo/.local/share/pnpm"

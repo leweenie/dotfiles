@@ -2,7 +2,7 @@
 
 WALLPAPER_DIR="$HOME/Downloads/wallpapers"
 
-SELECTED_WALLPAPER=$(ls "$WALLPAPER_DIR" | wofi --dmenu)
+SELECTED_WALLPAPER=$(ls "$WALLPAPER_DIR" | wofi --dmenu --allow-images)
 
 if [ -z "$SELECTED_WALLPAPER" ]; then
     echo "No wallpaper selected."

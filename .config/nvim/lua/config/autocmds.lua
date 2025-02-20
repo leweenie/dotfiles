@@ -10,12 +10,11 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set clipboard+=unnamedplus")
 vim.cmd("set ic hls is")
--- vim.cmd("autocmd TermOpen * startinsert")
+vim.cmd("set clipboard+=unnamedplus")
+vim.cmd("set ic hls is")
 vim.cmd("set splitright")
 vim.cmd("set splitbelow")
 vim.opt.fillchars = { eob = " " }
-vim.opt.showmode = false
--- vim.opt.statusline = "%t%{&modified ? ' [+]' : ''}"
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking text",
@@ -26,7 +25,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*", -- Apply to all file types
+  pattern = "*",
   callback = function()
     vim.bo.tabstop = 2
     vim.bo.shiftwidth = 2
@@ -34,9 +33,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- save session on quit
-vim.api.nvim_create_autocmd("VimLeavePre", {
-  callback = function()
-    vim.cmd("SessionSave")
-  end,
-})
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}

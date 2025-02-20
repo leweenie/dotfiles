@@ -7,13 +7,6 @@ return {
     config = function()
       vim.cmd("set laststatus=3")
       local colors = {
-        -- blue   = '#80a0ff',
-        -- cyan   = '#79dac8',
-        -- black  = '#000000',
-        -- white  = '#c6c6c6',
-        -- red    = '#ff5189',
-        -- violet = '#5F8787',
-        -- grey   = '#303030',
         blue   = 'none',
         cyan   = 'none',
         black  = 'none',
@@ -70,7 +63,6 @@ return {
         always_show_tabline = false,
         globalstatus = false,
         sections = {
-          -- lualine_a = { 'mode' },
           lualine_a = { function()
             mode_lower()
             return vim.g.lower_mode
