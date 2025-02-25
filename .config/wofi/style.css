@@ -1,11 +1,11 @@
 @import ".cache/wal/colors-waybar.css";
 
 window {
-  font-family: SF Pro;
+  /*font-family: SF Pro;*/
   font-size: 17px;
   background-color: @background;
   /*border-radius: 10px;*/
-  border: 1px solid #1A1A1A;
+  border: 1px solid #1a1a1a;
 }
 
 #outer-box {

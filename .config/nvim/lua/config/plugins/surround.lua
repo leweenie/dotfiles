@@ -1,7 +1,6 @@
 return {
   {
     "tpope/vim-surround",
-    config = function()
-    end
-  }
+    config = function() end,
+  },
 }
