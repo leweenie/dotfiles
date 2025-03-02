@@ -4,8 +4,8 @@ window {
   /*font-family: SF Pro;*/
   font-size: 17px;
   background-color: @background;
-  /*border-radius: 10px;*/
-  border: 1px solid #1a1a1a;
+  border: 1px solid @color1;
+  border-radius: 10px;
 }
 
 #outer-box {

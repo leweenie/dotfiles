@@ -82,7 +82,7 @@ alias update="sudo pacman -Syu; yay -Syu"
 # ----------------------- ENV VARS ----------------------
 
 export PATH="$HOME/venv/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # pnpm

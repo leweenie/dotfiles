@@ -7,10 +7,10 @@ end, { nargs = 0 })
 vim.keymap.set("n", "<Bslash>", "<cmd>OilToggle<cr>", opts)
 
 -- text management
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", opts)     -- move line up(n)
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", opts)     -- move line down(n)
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- move line up(v)
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- move line down(v)
+vim.keymap.set("n", "<A-j>", ":m .+1<cr>==", opts)     -- move line up(n)
+vim.keymap.set("n", "<A-k>", ":m .-2<cr>==", opts)     -- move line down(n)
+vim.keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", opts) -- move line up(v)
+vim.keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", opts) -- move line down(v)
 
 -- better indenting
 vim.keymap.set("v", "<", "<gv", opts)
@@ -35,3 +35,12 @@ vim.keymap.set("n", "<leader>lf", "<cmd>LspStart<cr>", opts)
 
 -- clear highlight
 vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", opts)
+
+-- laucnh md.preivew
+vim.keymap.set("n", "<leader>mm", "<cmd>MarkdownPreviewToggle<cr>", opts)
+
+-- execute current file (toggleterm)
+vim.keymap.set("n", "<C-'>", "<cmd>TermExec cmd='python %'<cr>", opts)
+
+-- go to dashboard
+vim.keymap.set("n", "<leader>gh", "<cmd>Alpha<cr>", opts)

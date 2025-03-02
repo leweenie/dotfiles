@@ -13,7 +13,7 @@ return {
           "go",
           "typescript",
           "css",
-          "html"
+          "html",
         },
         sync_install = false,
         highlight = {
