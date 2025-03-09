@@ -40,7 +40,33 @@ vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", opts)
 vim.keymap.set("n", "<leader>mm", "<cmd>MarkdownPreviewToggle<cr>", opts)
 
 -- execute current file (toggleterm)
-vim.keymap.set("n", "<C-'>", "<cmd>TermExec cmd='python %'<cr>", opts)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "python", "go" },
+  callback = function()
+    local filetype = vim.bo.filetype
+    local cmd = ""
+
+    if filetype == "go" then
+      cmd = "go run %"
+    elseif filetype == "python" then
+      cmd = "python %"
+    end
+
+    if cmd ~= "" then
+      local term_toggle = function()
+        local term_buf = vim.fn.bufnr("term://*")
+        if term_buf ~= -1 then
+          vim.cmd("bd! " .. term_buf)
+        else
+          vim.cmd("TermExec cmd='" .. cmd .. "'")
+          vim.cmd("stopinsert")
+        end
+      end
+
+      vim.keymap.set("n", "<C-'>", term_toggle, { noremap = true, silent = true })
+    end
+  end,
+})
 
 -- go to dashboard
 vim.keymap.set("n", "<leader>gh", "<cmd>Alpha<cr>", opts)
