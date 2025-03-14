@@ -1,0 +1,33 @@
+#!/bin/bash
+
+LOW_THRESHOLD=20
+CRITICAL_THRESHOLD=10
+
+BATTERY_PATH="/sys/class/power_supply/BAT0"
+
+LOW_NOTIFIED=false
+CRITICAL_NOTIFIED=false
+
+while true; do
+    BATTERY_STATUS=$(cat $BATTERY_PATH/status)
+    BATTERY_CAPACITY=$(cat $BATTERY_PATH/capacity)
+
+    if [ "$BATTERY_STATUS" == "Discharging" ]; then
+        if [ "$BATTERY_CAPACITY" -le $CRITICAL_THRESHOLD ] && [ "$CRITICAL_NOTIFIED" = false ]; then
+            notify-send -u critical "Battery Critical" "$BATTERY_CAPACITY% battery remaining. Plug in your charger!" -t 10000
+            CRITICAL_NOTIFIED=true
+        elif [ "$BATTERY_CAPACITY" -le $LOW_THRESHOLD ] && [ "$LOW_NOTIFIED" = false ]; then
+            notify-send -u normal "Battery Low" "$BATTERY_CAPACITY% battery remaining. Consider plugging in your charger." -t 10000
+            LOW_NOTIFIED=true
+        fi
+    else
+        if [ "$BATTERY_CAPACITY" -gt $LOW_THRESHOLD ]; then
+            LOW_NOTIFIED=false
+        fi
+        if [ "$BATTERY_CAPACITY" -gt $CRITICAL_THRESHOLD ]; then
+            CRITICAL_NOTIFIED=false
+        fi
+    fi
+
+    sleep 60
+done

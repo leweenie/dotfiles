@@ -3,9 +3,10 @@
 window {
   /*font-family: SF Pro;*/
   font-size: 17px;
-  background-color: @background;
+  /*background-color: @background;*/
+  background-color: #050505;
   border: 1px solid @color1;
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 #outer-box {
@@ -33,7 +34,7 @@ window {
 
 #entry:selected {
   /*background-color: #3b3b3b;*/
-  background-color: @color10;
+  background-color: @color6;
   border-radius: 5px;
   outline: none;
 }

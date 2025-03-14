@@ -21,6 +21,7 @@ return {
               "cssls",
               "superhtml",
               "gopls",
+              "sqlls",
             },
           })
         end,
@@ -51,6 +52,9 @@ return {
         signs = true,
         underline = false,
         update_in_insert = false,
+        float = {
+          border = "rounded",
+        },
       })
 
       local capabilities = require("blink.cmp").get_lsp_capabilities()
@@ -63,6 +67,7 @@ return {
       lsp_config.cssls.setup({ capabilities = capabilities })
       lsp_config.superhtml.setup({ capabilities = capabilities })
       lsp_config.gopls.setup({ capabilities = capabilities })
+      lsp_config.sqlls.setup({ capabilities = capabilities })
 
       -- FORMATTING RELATED
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -113,9 +118,10 @@ return {
         sources = {
           null_ls.builtins.formatting.stylua,
           null_ls.builtins.completion.spell,
-          null_ls.builtins.formatting.black,
+          -- null_ls.builtins.formatting.black,
           null_ls.builtins.formatting.biome,
           null_ls.builtins.formatting.prettier,
+          null_ls.builtins.formatting.sql_formatter,
         },
       })
     end,

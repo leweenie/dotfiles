@@ -54,15 +54,9 @@ vim.api.nvim_create_autocmd("FileType", {
 
     if cmd ~= "" then
       local term_toggle = function()
-        local term_buf = vim.fn.bufnr("term://*")
-        if term_buf ~= -1 then
-          vim.cmd("bd! " .. term_buf)
-        else
-          vim.cmd("TermExec cmd='" .. cmd .. "'")
-          vim.cmd("stopinsert")
-        end
+        vim.cmd("TermExec cmd='" .. cmd .. "'")
+        vim.cmd("stopinsert")
       end
-
       vim.keymap.set("n", "<C-'>", term_toggle, { noremap = true, silent = true })
     end
   end,
@@ -70,3 +64,35 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- go to dashboard
 vim.keymap.set("n", "<leader>gh", "<cmd>Alpha<cr>", opts)
+
+-- close buffer
+vim.keymap.set("n", "<leader>cl", "<cmd>bd!<cr>", opts)
+
+-- cycle lsp diagnostics
+vim.keymap.set("n", "<C-n>", function()
+  vim.diagnostic.goto_next()
+end)
+vim.keymap.set("n", "<C-p>", function()
+  vim.diagnostic.goto_prev()
+end)
+
+-- gitsigns keymaps
+local gitsigns = require("gitsigns")
+
+vim.keymap.set("n", "<leader>n", function() -- goto next hunk
+  if vim.wo.diff then
+    vim.cmd.normal({ "<leader>n", bang = true })
+  else
+    gitsigns.nav_hunk("next")
+  end
+end)
+
+vim.keymap.set("n", "<leader>p", function() -- goto previous hunk
+  if vim.wo.diff then
+    vim.cmd.normal({ "<leader>p", bang = true })
+  else
+    gitsigns.nav_hunk("prev")
+  end
+end)
+
+vim.keymap.set("n", "<leader>gp", gitsigns.preview_hunk) -- open preivew
