@@ -4,9 +4,13 @@ window {
   /*font-family: SF Pro;*/
   font-size: 17px;
   /*background-color: @background;*/
-  background-color: #050505;
+  background-color: #091721;
   border: 1px solid @color1;
   border-radius: 0px;
+}
+
+#window {
+  background-color: rgba(9, 23, 23, 0.95);
 }
 
 #outer-box {
@@ -14,7 +18,8 @@ window {
 }
 
 #input {
-  background-color: @color0;
+  /*background-color: @color0;*/
+  background-color: rgba(9, 23, 23, 0);
   color: white;
   padding: 10px 20px;
   margin-bottom: 15px;
@@ -35,7 +40,7 @@ window {
 #entry:selected {
   /*background-color: #3b3b3b;*/
   background-color: @color6;
-  border-radius: 5px;
+  border-radius: 0px;
   outline: none;
 }
 

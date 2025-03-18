@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 BOOK_DIR="$HOME/Downloads/books"
 
@@ -6,4 +6,4 @@ SELECTED_BOOK=$(ls "$BOOK_DIR" | wofi --dmenu)
 
 BOOK="$BOOK_DIR/$SELECTED_BOOK"
 
-nohup zathura "$BOOK"
+nohup zathura "$BOOK" & 
