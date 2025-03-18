@@ -56,7 +56,7 @@ return {
           transparency = true,
         },
       })
-      -- vim.cmd("colorscheme rose-pine-main")
+      vim.cmd("colorscheme rose-pine-moon")
     end,
   },
   {
@@ -150,13 +150,13 @@ return {
       -- vim.cmd.colorscheme("vscode")
     end,
   },
-  {
-    "ramojus/mellifluous.nvim",
-    config = function()
-      require("mellifluous").setup({})
-      vim.cmd("colorscheme mellifluous")
-      vim.cmd("Mellifluous toggle_transparency")
-      vim.api.nvim_set_hl(0, "Comment", { fg = "#5B5B5B", italic = true })
-    end,
-  },
+  -- {
+  --   "ramojus/mellifluous.nvim",
+  --   config = function()
+  --     require("mellifluous").setup({})
+  --     vim.cmd("colorscheme mellifluous")
+  --     vim.cmd("Mellifluous toggle_transparency")
+  --     vim.api.nvim_set_hl(0, "Comment", { fg = "#5B5B5B", italic = true })
+  --   end,
+  -- },
 }
