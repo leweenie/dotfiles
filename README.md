@@ -6,4 +6,4 @@
 [tmux-plugins/tpm](https://www.github.com/tmux-plugins/tpm) \
 [tmux-plugins/tmux-sensible](https://www.github.com/tmux-plugins/tmux-sensible) \
 [tmux-plugins/tmux-yank](https://www.github.com/tmux-plugins/tmux-yank) \
-[tmux-plugins/tpm](https://www.github.com/christoomey/vim-tmux-navigator) 
+[christoomey/vim-tmux-navigator](https://www.github.com/christoomey/vim-tmux-navigator) 
