@@ -21,10 +21,10 @@ vim.keymap.set("n", "<S-l>", "<cmd>bn<cr>", opts) -- move buffer next
 vim.keymap.set("n", "<S-h>", "<cmd>bp<cr>", opts) -- move buffer prev
 
 -- window resize
-vim.keymap.set("n", "<A-S-k>", "<cmd>horizontal resize +5<cr>", opts) -- horizontal (taller)
-vim.keymap.set("n", "<A-S-j>", "<cmd>horizontal resize -5<cr>", opts) -- horizontal (shorter)
-vim.keymap.set("n", "<A-S-l>", "<cmd>vertical resize +10<cr>", opts)  -- vertical (wider)
-vim.keymap.set("n", "<A-S-h>", "<cmd>vertical resize -10<cr>", opts)  -- vertical (thinner)
+vim.keymap.set("n", "<C-A-k>", "<cmd>horizontal resize +5<cr>", opts) -- horizontal (taller)
+vim.keymap.set("n", "<C-A-j>", "<cmd>horizontal resize -5<cr>", opts) -- horizontal (shorter)
+vim.keymap.set("n", "<C-A-l>", "<cmd>vertical resize +10<cr>", opts)  -- vertical (wider)
+vim.keymap.set("n", "<C-A-h>", "<cmd>vertical resize -10<cr>", opts)  -- vertical (thinner)
 
 -- exit terminal mode
 vim.keymap.set("t", "<esc>", "<c-\\><c-n>")
@@ -73,3 +73,13 @@ vim.keymap.set("n", "<leader>p", function() -- goto previous hunk
 end)
 
 vim.keymap.set("n", "<leader>gp", gitsigns.preview_hunk) -- open preivew
+
+-- toggle neotree
+vim.keymap.set("n", "<leader>tt", function()
+  vim.cmd("Neotree reveal_force_cwd toggle")
+  vim.cmd(".")
+end)
+
+-- start liveserver
+vim.keymap.set("n", "<leader>ss", "<cmd>LiveServerStart<cr>")
+vim.keymap.set("n", "<leader>st", "<cmd>LiveServerStop<cr>")

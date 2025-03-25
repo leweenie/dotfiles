@@ -10,8 +10,8 @@ offset = 22x22
 frame_width = 1
 frame_color = "#FFFFFF19"
 separator_color = frame
-font = "GeistMono Nerd Font 9"
+font = "SF Pro 9"
 corner_radius = 0
-background = "#091721"
-foreground = "#C4C3C3"
+background = "#000000"
+foreground = "#C4C4C4"
 

@@ -1,8 +1,9 @@
 # -------------------- INITIAL LOAD ---------------------
 
 # fastfetch
-cat ~/.cache/wal/sequences
-clear
+# cat ~/.cache/wal/sequences
+# clear
+
 
 # ------------------ PRE-CONFIGURATION ------------------ 
 

@@ -10,12 +10,11 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set clipboard+=unnamedplus")
 vim.cmd("set ic hls is")
-vim.cmd("set clipboard+=unnamedplus")
 vim.cmd("set ic hls is")
 vim.cmd("set splitright")
 vim.cmd("set splitbelow")
 vim.cmd("set termguicolors")
-vim.opt.fillchars = { eob = " " }
+-- vim.opt.fillchars = { eob = " " }
 vim.opt.showmode = false
 
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -27,10 +26,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*",
+  pattern = "py",
   callback = function()
-    vim.opt.tabstop = 2
-    vim.opt.shiftwidth = 2
+    vim.opt.tabstop = 4
+    vim.opt.shiftwidth = 4
     vim.opt.expandtab = true
   end,
 })
