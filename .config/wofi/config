@@ -1,6 +1,9 @@
-width=650
-height=275
+width=450
+height=375
 prompt=
 hide_scroll=true
 insensitive=true
 allow_images=true
+
+key_up=Ctrl-k
+key_down=Ctrl-j

@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 is_muted=$(pactl get-source-mute @DEFAULT_SOURCE@ | awk '{print $2}')
 

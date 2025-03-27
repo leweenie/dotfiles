@@ -2,12 +2,20 @@ return {
 	{
 		"akinsho/bufferline.nvim",
 		priority = -1,
-		enabled = false,
+		enabled = true,
 		config = function()
+			local bufferline = require("bufferline")
 			require("bufferline").setup({
 				options = {
+					separator_style = "thin",
+					style_preset = {
+						bufferline.style_preset.no_italic,
+					},
 					indicator = {
 						style = "none",
+					},
+					pick = {
+						alphabet = "1234567",
 					},
 					show_close_icon = false,
 					color_icons = true,

@@ -4,6 +4,7 @@
 # cat ~/.cache/wal/sequences
 # clear
 
+bindkey -s '^F' 'tmux-sessionizer\n'
 
 # ------------------ PRE-CONFIGURATION ------------------ 
 
