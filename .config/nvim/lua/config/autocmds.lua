@@ -5,9 +5,9 @@ vim.cmd("set cursorline")
 vim.cmd("set cursorlineopt=number")
 vim.cmd("set laststatus=3")
 vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
+vim.cmd("set tabstop=2")
+vim.cmd("set softtabstop=2")
+vim.cmd("set shiftwidth=2")
 vim.cmd("set clipboard+=unnamedplus")
 vim.cmd("set ic hls is")
 vim.cmd("set splitright")
@@ -21,6 +21,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
     callback = function()
         vim.highlight.on_yank()
+    end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "python", "go", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    callback = function()
+        vim.bo.tabstop = 4
+        vim.bo.shiftwidth = 4
+        vim.bo.expandtab = true
     end,
 })
 
