@@ -11,6 +11,7 @@ return {
   -- MD PREVIEWING
   {
     "iamcco/markdown-preview.nvim",
+    enabled = true,
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     build = "cd app && yarn install",
     init = function()

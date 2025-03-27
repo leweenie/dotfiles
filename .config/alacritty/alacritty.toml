@@ -10,6 +10,8 @@ opacity = 1
 
 [font]
 normal.family = "Lilex Nerd Font"
+bold.family = "Lilex Nerd Font"
+italic.family = "Lilex Nerd Font"
 size = 14
 
 [colors.primary]
@@ -18,9 +20,4 @@ background = '#000000'
 [[keyboard.bindings]]
 key = "P"
 mods = "Control|Shift"
-command = { program = "alacritty", args = ["msg", "config", "window.opacity=1.0"] }
-
-[[keyboard.bindings]]
-key = "O"
-mods = "Control|Shift"
-command = { program = "alacritty", args = ["msg", "config", "window.opacity=0.9"] }
+command = { program = "/bin/zsh", args = ["-c","$HOME/.bin/alacritty-opacity.sh"] }
