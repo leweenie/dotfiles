@@ -1,7 +1,7 @@
 return {
   {
     "kawre/leetcode.nvim",
-    enabled = false,
+    enabled = true,
     dependencies = {
       "nvim-telescope/telescope.nvim",
       -- "ibhagwan/fzf-lua",

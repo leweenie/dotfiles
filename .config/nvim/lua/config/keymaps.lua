@@ -1,10 +1,9 @@
 local opts = { noremap = true, silent = true }
 
 -- oil.nvim toggle
-vim.api.nvim_create_user_command("OilToggle", function()
-  vim.cmd((vim.bo.filetype == "oil") and "bd" or "Oil")
-end, { nargs = 0 })
-vim.keymap.set("n", "<Bslash>", "<cmd>OilToggle<cr>", opts)
+vim.keymap.set("n", "<Bslash>", function()
+  require("oil").toggle_float()
+end, { desc = "Toggle Oil float" })
 
 -- text management
 vim.keymap.set("n", "<A-j>", ":m .+1<cr>==", opts)     -- move line up(n)
@@ -73,12 +72,6 @@ vim.keymap.set("n", "<leader>p", function() -- goto previous hunk
 end)
 
 vim.keymap.set("n", "<leader>gp", gitsigns.preview_hunk) -- open preivew
-
--- toggle neotree
-vim.keymap.set("n", "<leader>tt", function()
-  vim.cmd("Neotree reveal_force_cwd toggle")
-  vim.cmd(".")
-end)
 
 -- start liveserver
 vim.keymap.set("n", "<leader>ss", "<cmd>LiveServerStart<cr>")

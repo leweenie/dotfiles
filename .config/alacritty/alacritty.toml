@@ -15,7 +15,12 @@ italic.family = "Lilex Nerd Font"
 size = 14
 
 [colors.primary]
+# background = '#1A1C1E'
 background = '#000000'
+
+[colors.cursor]
+text = '#000000'
+cursor = '#34F890'
 
 [[keyboard.bindings]]
 key = "P"
