@@ -1,7 +1,7 @@
 local opts = { noremap = true, silent = true }
 
 -- oil.nvim toggle
-vim.keymap.set("n", "<Bslash>", function()
+vim.keymap.set("n", "<leader>e", function()
   require("oil").toggle_float()
 end, { desc = "Toggle Oil float" })
 
@@ -46,10 +46,10 @@ vim.keymap.set("n", "<leader>cl", "<cmd>bd!<cr>", opts)
 
 -- cycle lsp diagnostics
 vim.keymap.set("n", "<C-n>", function()
-  vim.diagnostic.goto_next()
+  vim.diagnostic.jump({ count = 1, float = true })
 end)
 vim.keymap.set("n", "<C-p>", function()
-  vim.diagnostic.goto_prev()
+  vim.diagnostic.jump({ count = -1, float = true })
 end)
 
 -- gitsigns keymaps
@@ -76,3 +76,9 @@ vim.keymap.set("n", "<leader>gp", gitsigns.preview_hunk) -- open preivew
 -- start liveserver
 vim.keymap.set("n", "<leader>ss", "<cmd>LiveServerStart<cr>")
 vim.keymap.set("n", "<leader>st", "<cmd>LiveServerStop<cr>")
+
+-- unbind arrow keys
+-- vim.keymap.set({ "i", "n", "v" }, "<Up>", "<Nop>", opts)
+-- vim.keymap.set({ "i", "n", "v" }, "<Down>", "<Nop>", opts)
+-- vim.keymap.set({ "i", "n", "v" }, "<Left>", "<Nop>", opts)
+-- vim.keymap.set({ "i", "n", "v" }, "<Right>", "<Nop>", opts)
