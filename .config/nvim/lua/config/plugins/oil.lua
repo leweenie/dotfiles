@@ -33,9 +33,9 @@ return {
         },
 
         float = {
-          padding = 8,
-          max_width = vim.o.lines * 2,
-          max_height = vim.o.columns * 1.5,
+          padding = 2,
+          max_width = 125,
+          max_height = 25,
           border = "rounded",
           win_options = {
             winblend = 0,

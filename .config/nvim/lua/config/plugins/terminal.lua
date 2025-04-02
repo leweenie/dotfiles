@@ -1,13 +1,13 @@
 return {
   {
     "akinsho/toggleterm.nvim",
-    enabled = false,
+    enabled = true,
     version = "*",
     config = function()
       require("toggleterm").setup({
         direction = "float",
         size = 10,
-        -- open_mapping = [[<c-\>]],
+        open_mapping = [[<c-\>]],
       })
 
       vim.keymap.set({ "i", "n", "t" }, "<C-Bslash>", function()

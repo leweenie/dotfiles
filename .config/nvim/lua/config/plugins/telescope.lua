@@ -52,7 +52,7 @@ return {
 
       vim.keymap.set("n", "<leader>ff", function() -- find all files
         require("telescope.builtin").find_files({
-          -- cwd = os.getenv("HOME"),
+          cwd = os.getenv("HOME"),
         })
       end)
 

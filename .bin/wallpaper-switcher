@@ -2,7 +2,7 @@
 
 WALLPAPER_DIR="$HOME/Downloads/wallpapers"
 
-SELECTED_WALLPAPER=$(ls "$WALLPAPER_DIR" | wofi --dmenu --allow-images)
+SELECTED_WALLPAPER=$(ls "$WALLPAPER_DIR" | wofi --dmenu)
 
 if [ -z "$SELECTED_WALLPAPER" ]; then
     echo "No wallpaper selected."
@@ -11,6 +11,6 @@ fi
 
 WALLPAPER="$WALLPAPER_DIR/$SELECTED_WALLPAPER"
 
-swww img "$WALLPAPER" && wal --backend colorz -i "$WALLPAPER"
+swww img "$WALLPAPER"
 
 echo "Wallpaper changed to $SELECTED_WALLPAPER"

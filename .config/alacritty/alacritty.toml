@@ -16,6 +16,7 @@ size = 14
 
 [colors.primary]
 # background = '#1A1C1E'
+# background = '#262626'
 background = '#000000'
 
 [colors.cursor]

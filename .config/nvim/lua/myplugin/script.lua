@@ -1,0 +1,1 @@
+-- vim.api.nvim_open_win(0, true, { width = 30, height = 30, relative = "cursor", row = 10, col = 10, style = "minimal" })

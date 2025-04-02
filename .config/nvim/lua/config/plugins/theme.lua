@@ -7,36 +7,6 @@ return {
     },
     config = function()
       require("tokyonight").setup({
-        -- on_highlights = function(hl, c)
-        --   local prompt = "#2d3149"
-        --   hl.TelescopeNormal = {
-        --     bg = c.none,
-        --     fg = c.fg_dark,
-        --   }
-        --   hl.TelescopeBorder = {
-        --     bg = c.none,
-        --     fg = c.bg_dark,
-        --   }
-        --   hl.TelescopePromptNormal = {
-        --     bg = c.none,
-        --   }
-        --   hl.TelescopePromptBorder = {
-        --     bg = c.none,
-        --     fg = prompt,
-        --   }
-        --   hl.TelescopePromptTitle = {
-        --     bg = c.none,
-        --     fg = prompt,
-        --   }
-        --   hl.TelescopePreviewTitle = {
-        --     bg = c.none,
-        --     fg = c.bg_dark,
-        --   }
-        --   hl.TelescopeResultsTitle = {
-        --     bg = c.none,
-        --     fg = c.bg_dark,
-        --   }
-        -- end,
         style = "night",
         transparent = true,
         styles = {
@@ -65,10 +35,10 @@ return {
     "sainnhe/gruvbox-material",
     config = function()
       vim.g.gruvbox_material_transparent_background = 0
-      vim.g.gruvbox_material_foreground = "mix"
+      vim.g.gruvbox_material_foreground = "material"
       vim.g.gruvbox_material_background = "hard"
-      vim.g.gruvbox_material_ui_contrast = "high"
-      vim.g.gruvbox_material_float_style = "bright"
+      vim.g.gruvbox_material_ui_contrast = "low"
+      vim.g.gruvbox_material_float_style = "dim"
       vim.g.gruvbox_material_statusline_style = "material"
       vim.g.gruvbox_material_cursor = "auto"
       -- vim.cmd.colorscheme("gruvbox-material")
@@ -154,13 +124,13 @@ return {
     end,
   },
   -- {
-  --     "ramojus/mellifluous.nvim",
-  --     config = function()
-  --         require("mellifluous").setup({})
-  --         vim.cmd("colorscheme mellifluous")
-  --         vim.cmd("Mellifluous toggle_transparency")
-  --         vim.api.nvim_set_hl(0, "Comment", { fg = "#5B5B5B", italic = true })
-  --     end,
+  --   "ramojus/mellifluous.nvim",
+  --   config = function()
+  --     require("mellifluous").setup({})
+  --     vim.cmd("colorscheme mellifluous")
+  --     vim.cmd("Mellifluous toggle_transparency")
+  --     vim.api.nvim_set_hl(0, "Comment", { fg = "#5B5B5B", italic = true })
+  --   end,
   -- },
   {
     "catppuccin/nvim",
@@ -173,19 +143,19 @@ return {
           light = "mocha",
           dark = "mocha",
         },
-        transparent_background = false, -- disables setting the background color.
+        transparent_background = true, -- disables setting the background color.
         show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-        term_colors = false,        -- sets terminal colors (e.g. `g:terminal_color_0`)
+        term_colors = false,       -- sets terminal colors (e.g. `g:terminal_color_0`)
         dim_inactive = {
-          enabled = false,          -- dims the background color of inactive window
+          enabled = false,         -- dims the background color of inactive window
           shade = "dark",
-          percentage = 0.15,        -- percentage of the shade to apply to the inactive window
+          percentage = 0.15,       -- percentage of the shade to apply to the inactive window
         },
-        no_italic = false,          -- Force no italic
-        no_bold = false,            -- Force no bold
-        no_underline = false,       -- Force no underline
-        styles = {                  -- Handles the styles of general hi groups (see `:h highlight-args`):
-          comments = { "italic" },  -- Change the style of comments
+        no_italic = false,         -- Force no italic
+        no_bold = false,           -- Force no bold
+        no_underline = false,      -- Force no underline
+        styles = {                 -- Handles the styles of general hi groups (see `:h highlight-args`):
+          comments = { "italic" }, -- Change the style of comments
           conditionals = { "italic" },
           loops = {},
           functions = {},
@@ -216,7 +186,7 @@ return {
         },
       })
 
-      -- vim.cmd.colorscheme("catppuccin")
+      -- vim.cmd.colorscheme("catppuccin-mocha")
     end,
   },
 }

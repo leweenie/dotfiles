@@ -17,22 +17,22 @@ vim.cmd("set termguicolors")
 vim.opt.showmode = false
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+  desc = "Highlight when yanking text",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "python", "go", "javascript", "javascriptreact", "typescript", "typescriptreact" },
-	callback = function()
-		vim.bo.tabstop = 4
-		vim.bo.shiftwidth = 4
-		vim.bo.expandtab = true
-	end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = { "python", "go", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+-- 	callback = function()
+-- 		vim.bo.tabstop = 4
+-- 		vim.bo.shiftwidth = 4
+-- 		vim.bo.expandtab = true
+-- 	end,
+-- })
 
 vim.g.markdown_fenced_languages = {
-	"ts=typescript",
+  "ts=typescript",
 }

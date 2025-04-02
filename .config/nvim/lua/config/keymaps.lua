@@ -35,7 +35,7 @@ vim.keymap.set("n", "<leader>lf", "<cmd>LspStart<cr>", opts)
 -- clear highlight
 vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", opts)
 
--- laucnh md.preivew
+-- launch md.preivew
 vim.keymap.set("n", "<leader>mm", "<cmd>MarkdownPreviewToggle<cr>", opts)
 
 -- go to dashboard
