@@ -7,10 +7,10 @@ return {
       require("toggleterm").setup({
         direction = "float",
         size = 10,
-        open_mapping = [[<c-\>]],
+        -- open_mapping = [[<c-\>]],
       })
 
-      vim.keymap.set({ "i", "n", "t" }, "<C-Bslash>", function()
+      vim.keymap.set({ "i", "n", "t" }, "<leader>tt", function()
         local file_type = vim.bo.filetype
         local file_path = vim.fn.expand("%:.")
 

@@ -11,7 +11,7 @@ frame_width = 1
 frame_color = "#FFFFFF19"
 separator_color = frame
 font = "SF Pro 9"
-corner_radius = 0
+corner_radius = 6
 background = "#000000"
 foreground = "#C4C4C4"
 

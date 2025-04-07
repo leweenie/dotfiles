@@ -12,7 +12,7 @@ return {
     config = function()
       require("barbecue").setup({
         theme = {
-          -- normal = { bg = "#000000" },
+          normal = { bg = "#000000" },
           -- normal = { bg = "#090909" },
           -- normal = { bg = "#262626" },
         },
