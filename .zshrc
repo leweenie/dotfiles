@@ -70,13 +70,12 @@ alias token='cat $HOME/.token'
 
 # browse web
 # alias ss='function _search() { nohup firefox --new-window "https://www.google.com/search?q=$*"; rm -rf nohup.out;}; _search'
-alias ss='function _search() { nohup zen-browser --new-window "https://www.google.com/search?q=$*"; rm -rf nohup.out;}; _search'
+alias ss='function _search() { nohup floorp --new-window "https://www.google.com/search?q=$*"; rm -rf nohup.out;}; _search'
 alias f="fastfetch"
 alias tt="ttyper"
 alias opr="open-curr-repo"
 alias tree="cbonsai -il -M 10 -L 55 -c o -t .04"
 alias y="yazi"
-alias sp="spotify_player"
 alias ws="wallpaper-switcher"
 alias notes='cd ~/notes && nvim $(date +"notes-%Y-%m-%d-%s").md'
 alias update="sudo pacman -Syu; yay -Syu"

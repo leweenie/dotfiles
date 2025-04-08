@@ -19,6 +19,8 @@ return {
               "lua_ls",
               "pyright",
               "tailwindcss",
+              "biome",
+              "clangd",
               "cssls",
               "superhtml",
               "gopls",
