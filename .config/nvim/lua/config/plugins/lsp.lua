@@ -78,6 +78,7 @@ return {
       lsp_config.cssls.setup({ capabilities = capabilities })
       lsp_config.superhtml.setup({ capabilities = capabilities })
       lsp_config.gopls.setup({ capabilities = capabilities })
+      lsp_config.clangd.setup({ capabilities = capabilities })
 
       -- FORMATTING RELATED
       vim.api.nvim_create_autocmd("LspAttach", {

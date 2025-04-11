@@ -1,3 +1,4 @@
+# ➜
 # -------------------- INITIAL LOAD ---------------------
 
 # fastfetch
@@ -84,7 +85,7 @@ alias books="books; exit"
 
 # ----------------------- ENV VARS ----------------------
 
-export PATH="$HOME/venv/bin:$PATH"
+export PATH="$HOME/.venv/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
