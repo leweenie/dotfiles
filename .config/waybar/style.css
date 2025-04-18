@@ -9,8 +9,8 @@
 }
 
 #waybar>box {
-  background-color: #000000;
-  /* background-color: rgba(0, 0, 0, 0.8); */
+  /* background-color: #000000; */
+  background-color: rgba(0, 0, 0, 0.9);
   padding: 2px 0px;
   /* border-radius: 4px; */
   box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.15);
@@ -25,6 +25,7 @@
 }
 
 #workspaces button.active {
+  /* color: #34f890; */
   color: #34f890;
   font-weight: bold;
   text-shadow: 0px 0px 5px #34f890;

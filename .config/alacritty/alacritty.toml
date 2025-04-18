@@ -6,7 +6,7 @@ TERM = "xterm-256color"
 [window]
 padding.x = 5
 padding.y = 5
-opacity = 1
+opacity = 0.9
 
 [font]
 normal.family = "Lilex Nerd Font"
@@ -16,12 +16,15 @@ size = 14
 
 [colors.primary]
 # background = '#1A1C1E'
-# background = '#262626'
+# background = '#1c1c1c'
 background = '#000000'
+# background = '#2B2E3D'
 
 [colors.cursor]
 text = '#000000'
 cursor = '#34F890'
+# cursor = '#4F46E5'
+# cursor = '#b51616'
 
 [[keyboard.bindings]]
 key = "P"
