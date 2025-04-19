@@ -24,14 +24,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
--- vim.api.nvim_create_autocmd("FileType", {
--- 	pattern = { "python", "go", "javascript", "javascriptreact", "typescript", "typescriptreact" },
--- 	callback = function()
--- 		vim.bo.tabstop = 4
--- 		vim.bo.shiftwidth = 4
--- 		vim.bo.expandtab = true
--- 	end,
--- })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "cpp", "python", "go", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  callback = function()
+    vim.bo.tabstop = 4
+    vim.bo.shiftwidth = 4
+    vim.bo.expandtab = true
+  end,
+})
 
 vim.g.markdown_fenced_languages = {
   "ts=typescript",

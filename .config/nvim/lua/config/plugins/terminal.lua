@@ -18,6 +18,10 @@ return {
           vim.cmd("TermExec cmd='python " .. file_path .. "'")
         elseif file_type == "go" then
           vim.cmd("TermExec cmd='go run " .. file_path .. "'")
+        elseif file_type == "cpp" then
+          local filename = vim.fn.expand('%:t:r')
+          local filepath = vim.fn.expand('%')
+          vim.cmd("TermExec cmd='g++ -o " .. filename .. " " .. filepath .. " && ./" .. filename .. "'")
         else
           vim.cmd("ToggleTerm")
         end
