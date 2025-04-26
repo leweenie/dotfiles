@@ -28,7 +28,7 @@ return {
           italic = false,
         },
       })
-      vim.cmd("colorscheme rose-pine-main")
+      -- vim.cmd("colorscheme rose-pine-main")
     end,
   },
   {
@@ -41,7 +41,7 @@ return {
       vim.g.gruvbox_material_float_style = "dim"
       vim.g.gruvbox_material_statusline_style = "material"
       vim.g.gruvbox_material_cursor = "auto"
-      -- vim.cmd.colorscheme("gruvbox-material")
+      vim.cmd.colorscheme("gruvbox-material")
     end,
   },
   {

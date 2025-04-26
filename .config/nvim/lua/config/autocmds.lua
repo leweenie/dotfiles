@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "cpp", "python", "go", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  pattern = { "python", "go", "javascript", "javascriptreact", "typescript", "typescriptreact" },
   callback = function()
     vim.bo.tabstop = 4
     vim.bo.shiftwidth = 4

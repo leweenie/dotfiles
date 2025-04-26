@@ -1,7 +1,7 @@
 return {
   {
     "andweeb/presence.nvim",
-    enabled = false,
+    enabled = true,
     config = function()
       require("presence").setup({
         auto_update = true,
