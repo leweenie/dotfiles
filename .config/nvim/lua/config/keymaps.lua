@@ -82,3 +82,7 @@ vim.keymap.set("n", "<leader>st", "<cmd>LiveServerStop<cr>")
 -- vim.keymap.set({ "i", "n", "v" }, "<Down>", "<Nop>", opts)
 -- vim.keymap.set({ "i", "n", "v" }, "<Left>", "<Nop>", opts)
 -- vim.keymap.set({ "i", "n", "v" }, "<Right>", "<Nop>", opts)
+
+-- hex convert -> rgba
+local map = vim.api.nvim_set_keymap
+map("n", "<leader>cc", ':lua require("hex2rgba").hex2rgba()<cr>', { noremap = true })

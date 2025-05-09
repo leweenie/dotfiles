@@ -12,7 +12,7 @@ opacity = 1
 normal.family = "Lilex Nerd Font"
 bold.family = "Lilex Nerd Font"
 italic.family = "Lilex Nerd Font"
-size = 14
+size = 17
 
 [colors.primary]
 # background = '#1A1C1E'

@@ -24,6 +24,7 @@ return {
               "cssls",
               "superhtml",
               "gopls",
+              -- "harper_ls",
             },
           })
         end,
@@ -79,6 +80,7 @@ return {
       lsp_config.superhtml.setup({ capabilities = capabilities })
       lsp_config.gopls.setup({ capabilities = capabilities })
       lsp_config.clangd.setup({ capabilities = capabilities })
+      -- lsp_config.harper_ls.setup({ capabilities = capabilities })
 
       -- FORMATTING RELATED
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -131,7 +133,7 @@ return {
         sources = {
           null_ls.builtins.formatting.stylua,
           null_ls.builtins.completion.spell,
-          null_ls.builtins.formatting.black,
+          -- null_ls.builtins.formatting.black,
           null_ls.builtins.formatting.biome,
           -- null_ls.builtins.formatting.prettier,
         },
