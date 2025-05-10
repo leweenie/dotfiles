@@ -17,31 +17,34 @@ return {
   --     -- vim.cmd("colorscheme tokyonight-storm")
   --   end,
   -- },
-  -- {
-  --   "rose-pine/neovim",
-  --   name = "rose-pine",
-  --   config = function()
-  --     require("rose-pine").setup({
-  --       styles = {
-  --         transparency = true,
-  --         bold = false,
-  --         italic = false,
-  --       },
-  --     })
-  --     -- vim.cmd("colorscheme rose-pine-main")
-  --   end,
-  -- },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    config = function()
+      require("rose-pine").setup({
+        styles = {
+          transparency = true,
+          bold = false,
+          italic = false,
+        },
+      })
+      vim.cmd("colorscheme rose-pine-main")
+      local comment_hl = vim.api.nvim_get_hl(0, { name = "Comment" })
+      comment_hl.italic = true
+      vim.api.nvim_set_hl(0, "Comment", comment_hl)
+    end,
+  },
   {
     "sainnhe/gruvbox-material",
     config = function()
-      vim.g.gruvbox_material_transparent_background = 0
+      vim.g.gruvbox_material_transparent_background = 1
       vim.g.gruvbox_material_foreground = "material"
       vim.g.gruvbox_material_background = "hard"
       vim.g.gruvbox_material_ui_contrast = "low"
       vim.g.gruvbox_material_float_style = "dim"
       vim.g.gruvbox_material_statusline_style = "material"
       vim.g.gruvbox_material_cursor = "auto"
-      vim.cmd.colorscheme("gruvbox-material")
+      -- vim.cmd.colorscheme("gruvbox-material")
     end,
   },
   -- {
@@ -254,8 +257,5 @@ return {
   --   config = function()
   --     -- vim.cmd("colorscheme moonfly")
   --   end,
-  -- },
-  -- {
-  --   "RRethy/base16-nvim",
   -- },
 }
