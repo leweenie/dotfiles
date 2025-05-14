@@ -82,6 +82,7 @@ alias notes='cd ~/notes && nvim $(date +"notes-%Y-%m-%d-%s").md'
 alias update="sudo pacman -Syu; yay -Syu"
 alias cleanup="sudo pacman -Scc; yay -Scc"
 alias books="books; exit"
+alias spt="spotify_player"
 
 # ----------------------- ENV VARS ----------------------
 

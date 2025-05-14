@@ -13,6 +13,7 @@ return {
     config = function()
       local actions = require("telescope.actions")
       require("telescope").setup({
+
         defaults = {
           mappings = {
             i = {
@@ -68,11 +69,11 @@ return {
         })
       end)
 
-      vim.keymap.set("n", "<leader>fr", require("telescope.builtin").oldfiles) -- recent files
+      vim.keymap.set("n", "<leader>fr", require("telescope.builtin").oldfiles)  -- recent files
 
       vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags) -- help parsing
 
-      vim.keymap.set("n", "<leader>fg", function()                           -- grep files
+      vim.keymap.set("n", "<leader>fg", function()                              -- grep files
         require("telescope.builtin").live_grep({})
       end)
     end,
