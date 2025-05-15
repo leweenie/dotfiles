@@ -36,3 +36,24 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.g.markdown_fenced_languages = {
   "ts=typescript",
 }
+
+-- create a custom command with completion
+vim.api.nvim_create_user_command("Export", function(opts)
+  vim.cmd("LspTinymistExport" .. opts.args)
+end, {
+  nargs = 1,
+  complete = function()
+    return {
+      "Pdf",
+      "Png",
+      "Svg",
+      "Text",
+      "AnsiHighlight",
+      "Markdown",
+      "Query",
+    }
+  end,
+})
+
+-- Optional: Add mapping for quick access
+vim.keymap.set("n", "<leader>e", ":Export ", { desc = "Tinymist export options" })

@@ -87,14 +87,7 @@ vim.keymap.set("n", "<leader>st", "<cmd>LiveServerStop<cr>")
 local map = vim.api.nvim_set_keymap
 map("n", "<leader>cc", ':lua require("hex2rgba").hex2rgba()<cr>', { noremap = true })
 
--- typst pdf preview
+-- typst preview
 vim.keymap.set("n", "<leader>tp", function()
-  vim.cmd("LspTinymistExportPdf")
-  local filepath = vim.fn.expand("%:p:r")
-  local pdfpath = filepath .. ".pdf"
-  print("Opening: " .. pdfpath)
-
-  vim.fn.jobstart({ "zathura", pdfpath }, {
-    detach = true,
-  })
+  vim.cmd("TypstPreview")
 end)

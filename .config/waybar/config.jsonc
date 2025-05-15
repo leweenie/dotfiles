@@ -7,7 +7,15 @@
 	// "margin-right": 8,
 	"modules-left": ["hyprland/workspaces"],
 	"modules-center": ["clock"],
-	"modules-right": ["cpu", "memory", "battery"],
+	"modules-right": [
+		"cpu",
+		"custom/sep",
+		"memory",
+		"custom/sep",
+		"network",
+		"custom/sep",
+		"battery"
+	],
 	"clock": {
 		"format": "{:%I:%M %p}",
 		//"format": "{:%A, %B %d, %Y (%R)}  ",
@@ -15,14 +23,21 @@
 		"format-alt": "{:%B %d, %Y}"
 	},
 	"cpu": {
-		"format": "{usage}% ",
+		// "format": "{usage}% ",
+		"format": "cpu {usage}%",
 		"tooltip": false,
 		"interval": 3
 	},
 	"memory": {
 		//"format": "{used}GB ",
-		"format": "{used}GB ",
-		"interval": 3
+		// "format": "{used}GB ",
+		"format": "mem {used}GiB/12GiB",
+		"interval": 3,
+		"tooltip": false
+	},
+	"custom/sep": {
+		"format": "::",
+		"tooltip": false
 	},
 	"battery": {
 		"states": {
@@ -30,26 +45,41 @@
 			"warning": 30,
 			"critical": 15
 		},
+
 		//"format": "{capacity}% {icon}",
 		//"format-full": "{capacity}% {icon}",
 		//"format-charging": "{capacity}% ",
 		//"format-plugged": "{capacity}% ",
 		//"format-alt": "{time} {icon}",
-		"format": "{capacity}% {icon}",
-		"format-full": "{capacity}% {icon}",
-		"format-charging": "{capacity}% ",
-		"format-alt": "{time} {icon}",
+
+		// "format": "{capacity}% {icon}",
+		// "format-full": "{capacity}% {icon}",
+		// "format-charging": "{capacity}% ",
+		// "format-alt": "{time} {icon}",
+
+		"format": "bat {capacity}%",
+		"format-full": "bat(f) {capacity}%",
+		"format-charging": "bat(c) {capacity}%",
+		"tooltip": false
+
+		// "format-alt": "{time} {icon}"
+
 		// "format-good": "", // An empty format will hide the module
 		// "format-full": "",
 		// "format-icons": ["", "", "", "", ""],
-		"interval": 1
 	},
 	"network": {
-		"format-wifi": "{essid} ({signalStrength}%) ",
-		"format-ethernet": "{ipaddr}/{cidr} ",
-		"tooltip-format": "{ifname} via {gwaddr} ",
+		// "format-wifi": "{essid} ({signalStrength}%)",
+		"format-wifi": "net {essid}",
+		"format-ethernet": "net {ifname}",
+		// "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+		// "format-alt": "net {ifname}",
+		// "format-ethernet": "{gwaddr}",
+		// "tooltip-format": "{ifname} via {gwaddr} ",
 		"format-linked": "{ifname} (No IP) ",
-		"format-disconnected": "Disconnected !",
-		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+		"format-disconnected": "disconnected",
+		// "format-alt": "{ifname}",
+		"tooltip": false,
+		"interval": 1
 	}
 }
