@@ -78,15 +78,17 @@ vim.keymap.set("n", "<leader>ss", "<cmd>LiveServerStart<cr>")
 vim.keymap.set("n", "<leader>st", "<cmd>LiveServerStop<cr>")
 
 -- unbind arrow keys
--- vim.keymap.set({ "i", "n", "v" }, "<Up>", "<Nop>", opts)
--- vim.keymap.set({ "i", "n", "v" }, "<Down>", "<Nop>", opts)
--- vim.keymap.set({ "i", "n", "v" }, "<Left>", "<Nop>", opts)
--- vim.keymap.set({ "i", "n", "v" }, "<Right>", "<Nop>", opts)
+vim.keymap.set({ "i", "n", "v" }, "<Up>", "<Nop>", opts)
+vim.keymap.set({ "i", "n", "v" }, "<Down>", "<Nop>", opts)
+vim.keymap.set({ "i", "n", "v" }, "<Left>", "<Nop>", opts)
+vim.keymap.set({ "i", "n", "v" }, "<Right>", "<Nop>", opts)
 
 -- hex convert -> rgba
 local map = vim.api.nvim_set_keymap
 map("n", "<leader>cc", ':lua require("hex2rgba").hex2rgba()<cr>', { noremap = true })
 
+-- list buffers
+vim.keymap.set("n", "<leader>b", "<cmd>buffers<cr>", opts)
 -- typst preview
 vim.keymap.set("n", "<leader>tp", function()
   vim.cmd("TypstPreview")

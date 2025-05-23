@@ -54,6 +54,3 @@ end, {
     }
   end,
 })
-
--- Optional: Add mapping for quick access
-vim.keymap.set("n", "<leader>e", ":Export ", { desc = "Tinymist export options" })

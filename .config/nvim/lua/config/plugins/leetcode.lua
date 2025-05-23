@@ -13,7 +13,7 @@ return {
       arg = "leetcode.nvim",
 
       ---@type lc.lang
-      lang = "python3",
+      lang = "javascript",
 
       cn = { -- leetcode.cn
         enabled = false, ---@type boolean
