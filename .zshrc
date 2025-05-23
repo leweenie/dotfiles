@@ -66,24 +66,36 @@ alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long li
 alias ld='eza -lhD --icons=auto' # long list dirs
 alias lt='eza --icons=auto --tree' # list folder as tree
 
-# token
+# important
 alias token='cat $HOME/.token'
-
-# browse web
-# alias ss='function _search() { nohup firefox --new-window "https://www.google.com/search?q=$*"; rm -rf nohup.out;}; _search'
-alias ss='function _search() { nohup floorp --new-window "https://www.google.com/search?q=$*"; rm -rf nohup.out;}; _search'
-alias f="fastfetch"
-alias tt="ttyper"
-alias opr="open-curr-repo"
-alias tree="cbonsai -il -M 10 -L 55 -c o -t .04"
-alias y="yazi"
-alias ws="wallpaper-switcher"
 alias notes='cd ~/notes && nvim $(date +"notes-%Y-%m-%d-%s").md'
+
+# scripts
+alias ss="./.bin/terminal-search.sh"
+alias opr="./.bin/open-curr-repo"
+alias ws="./.bin/wallpaper-switcher"
+
+# maintenance
 alias update="sudo pacman -Syu; yay -Syu"
 alias cleanup="sudo pacman -Scc; yay -Scc"
+
+# misc
+alias f="fastfetch"
+alias tt="ttyper"
+alias y="yazi"
 alias books="books; exit"
 alias spt="spotify_player"
+alias vim="nvim"
 
+cd() {
+  case "$1" in
+    .2) builtin cd ../.. ;;
+    .3) builtin cd ../../.. ;;
+    .4) builtin cd ../../../.. ;;
+    .5) builtin cd ../../../../.. ;;
+    *) builtin cd "$@" ;;
+  esac
+}
 # ----------------------- ENV VARS ----------------------
 
 export PATH="$HOME/.venv/bin:$PATH"
@@ -97,5 +109,3 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-export PATH=$PATH:/home/apollo/.spicetify
