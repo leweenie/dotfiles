@@ -35,10 +35,10 @@ return {
           vim.api.nvim_set_hl(0, group, { bg = "NONE" })
         end
         vim.cmd([[
-          highlight WinBar        guibg=NONE
-          highlight WinBarNC      guibg=NONE
-          highlight TabLineFill   guibg=NONE
-        ]])
+              highlight WinBar        guibg=NONE
+              highlight WinBarNC      guibg=NONE
+              highlight TabLineFill   guibg=NONE
+            ]])
       end
 
       vim.api.nvim_create_augroup("TransparentBarbecue", { clear = true })

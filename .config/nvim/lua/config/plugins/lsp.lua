@@ -56,10 +56,14 @@ return {
 
         signs = {
           text = {
-            [vim.diagnostic.severity.ERROR] = "",
-            [vim.diagnostic.severity.WARN] = "",
-            [vim.diagnostic.severity.INFO] = "",
-            [vim.diagnostic.severity.HINT] = "",
+            -- [vim.diagnostic.severity.ERROR] = "",
+            -- [vim.diagnostic.severity.WARN] = "",
+            -- [vim.diagnostic.severity.INFO] = "",
+            -- [vim.diagnostic.severity.HINT] = "",
+            [vim.diagnostic.severity.ERROR] = "e",
+            [vim.diagnostic.severity.WARN] = "w",
+            [vim.diagnostic.severity.INFO] = "i",
+            [vim.diagnostic.severity.HINT] = "h",
           },
           linehl = {
             [vim.diagnostic.severity.ERROR] = "ErrorMsg",
