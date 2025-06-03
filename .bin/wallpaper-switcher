@@ -2,15 +2,10 @@
 
 WALLPAPER_DIR="$HOME/Downloads/wallpapers"
 
-SELECTED_WALLPAPER=$(ls "$WALLPAPER_DIR" | wofi --dmenu)
+cd "$WALLPAPER_DIR"
 
-if [ -z "$SELECTED_WALLPAPER" ]; then
-    echo "No wallpaper selected."
-    exit 1
-fi
+SELECTED_WALLPAPER=$(for a in *.{jpg,png}; do 
+  echo -en "$a\0icon\x1f$a\n" 
+done | rofi -dmenu -p "")
 
-WALLPAPER="$WALLPAPER_DIR/$SELECTED_WALLPAPER"
-
-swww img "$WALLPAPER"
-
-echo "Wallpaper changed to $SELECTED_WALLPAPER"
+swww img "$SELECTED_WALLPAPER"

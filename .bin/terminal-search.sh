@@ -14,7 +14,7 @@ if [ $# -gt 0 ]; then
 
     else
         query="https://www.google.com/search?q=${message// /+}"
-        nohup floorp "$query" > /dev/null 2>&1 &
+        nohup qutebrowser "$query" > /dev/null 2>&1 &
     fi
 else
     echo "null message."
