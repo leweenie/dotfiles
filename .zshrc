@@ -71,9 +71,9 @@ alias token='cat $HOME/.token'
 alias notes='cd ~/notes && nvim $(date +"notes-%Y-%m-%d-%s").md'
 
 # scripts
-alias ss="./.bin/terminal-search.sh"
-alias opr="./.bin/open-curr-repo"
-alias ws="./.bin/wallpaper-switcher"
+alias ss="~/.bin/terminal-search.sh"
+alias opr="~/.bin/open-curr-repo"
+alias ws="~/.bin/wallpaper-switcher"
 
 # maintenance
 alias update="sudo pacman -Syu; yay -Syu"
@@ -86,6 +86,8 @@ alias y="yazi"
 alias books="books; exit"
 alias spt="spotify_player"
 alias vim="nvim"
+alias vi="nvim"
+alias p="python"
 
 cd() {
   case "$1" in
@@ -101,6 +103,7 @@ cd() {
 export PATH="$HOME/.venv/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export CONFIG="$HOME/.config/alacritty/alacritty.toml"
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
