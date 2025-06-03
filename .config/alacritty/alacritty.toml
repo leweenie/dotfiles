@@ -6,23 +6,30 @@ TERM = "xterm-256color"
 [window]
 padding.x = 5
 padding.y = 5
-opacity = 1
+opacity = 0.9
 
 [font]
-# normal.family = "Lilex Nerd Font"
-# bold.family = "Lilex Nerd Font"
-# italic.family = "Lilex Nerd Font"
+normal.family = "Lilex Nerd Font"
+bold.family = "Lilex Nerd Font"
+italic.family = "Lilex Nerd Font"
 
-normal.family = "JetBrainsMono Nerd Font"
-bold.family = "JetBrainsMono Nerd Font"
-italic.family = "JetBrainsMono Nerd Font"
+# normal.family = "JetBrainsMono Nerd Font"
+# bold.family = "JetBrainsMono Nerd Font"
+# italic.family = "JetBrainsMono Nerd Font"
 
-size = 17
+# normal.family = "TX-02"
+# bold.family = "TX-02"
+# italic.family = "TX-02"
+
+size = 23
 
 [colors.primary]
 # background = '#1A1C1E'
 # background = '#1c1c1c'
 background = '#000000'
+# background = '#181818'
+# background = '#222222'
+# background = '#1D2326'
 # background = '#2B2E3D'
 # background = '#1E1E2E'
 

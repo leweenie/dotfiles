@@ -1,5 +1,5 @@
 * {
-  /*font-family: SF Pro, FontAwesome6Free, SymbolsNerdFont;*/
+  /* font-family: SF Pro, FontAwesome6Free, SymbolsNerdFont; */
   /* font-family: JetBrainsMono Nerd Font; */
   /* font-family: SF Pro; */
   font-family: FreeMono;
@@ -11,8 +11,8 @@
 }
 
 #waybar>box {
-  /* background-color: #000000; */
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #000000;
+  /* background-color: rgba(0, 0, 0, 0.9); */
   padding: 2px 0px;
   /* border-radius: 4px; */
   box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.15);
