@@ -6,6 +6,6 @@ cd "$WALLPAPER_DIR"
 
 SELECTED_WALLPAPER=$(for a in *.{jpg,png}; do 
   echo -en "$a\0icon\x1f$a\n" 
-done | rofi -dmenu -p "")
+done | rofi -dmenu -p "wallpapers: ")
 
 swww img "$SELECTED_WALLPAPER"
