@@ -71,9 +71,9 @@ alias token='cat $HOME/.token'
 alias notes='cd ~/notes && nvim $(date +"notes-%Y-%m-%d-%s").md'
 
 # scripts
-alias ss="~/.bin/terminal-search.sh"
-alias opr="~/.bin/open-curr-repo"
-alias ws="~/.bin/wallpaper-switcher"
+alias ss="~/.bin/terminal_search.sh"
+alias opr="~/.bin/open_curr_repo"
+alias ws="~/.bin/wallpaper_switcher"
 
 # maintenance
 alias update="sudo pacman -Syu; yay -Syu"
