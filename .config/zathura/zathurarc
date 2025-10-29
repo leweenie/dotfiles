@@ -1,0 +1,48 @@
+set window-title-basename "true"
+
+set selection-clipboard "clipboard"
+
+set font "Terminess Nerd Font 12"
+
+map <C-i> recolor
+
+set notification-error-bg       "#ff5555" 
+set notification-error-fg       "#f8f8f2" 
+set notification-warning-bg     "#ffb86c" 
+set notification-warning-fg     "#44475a" 
+set notification-bg             "#282a36ff" 
+set notification-fg             "#f8f8f2" 
+
+set completion-bg               "#282a36ff" 
+set completion-fg               "#6272a4" 
+set completion-group-bg         "#282a36ff" 
+set completion-group-fg         "#6272a4" 
+set completion-highlight-bg     "#44475a" 
+set completion-highlight-fg     "#f8f8f2" 
+
+set index-bg                    "#282a36ff" 
+set index-fg                    "#f8f8f2" 
+set index-active-bg             "#44475a" 
+set index-active-fg             "#f8f8f2" 
+
+set inputbar-bg                 "#282a36ff" 
+set inputbar-fg                 "#f8f8f2" 
+set statusbar-bg                "#282a36ff" 
+set statusbar-fg                "#f8f8f2" 
+
+set highlight-color             "#ffffff00" 
+set highlight-active-color      "#ff79c6" 
+
+set default-bg                  "#101010" 
+set default-fg                  "#f8f8f200" 
+
+set render-loading              true
+set render-loading-fg           "#282a36ff"
+set render-loading-bg           "#f8f8f2" 
+
+set recolor-lightcolor          "#101010"
+set recolor-darkcolor           "#f8f8f2"
+
+
+set adjust-open best-fit
+set recolor true
