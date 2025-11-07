@@ -28,29 +28,28 @@ map("n", "<C-u>", "<C-u>zz", opts)
 map("n", "<C-d>", "<C-d>zz", opts)
 
 -- oil
-map("n", "<leader>e", ":Oil<CR>", opts)
+vim.keymap.set("n", "<leader>e", function()
+    require("oil").open_float()
+end)
 
 -- cycle lsp diagnostics
 map("n", "<C-n>", function()
-  vim.diagnostic.jump({ count = 1, float = true })
+    vim.diagnostic.jump({ count = 1, float = true })
 end)
 map("n", "<C-p>", function()
-  vim.diagnostic.jump({ count = -1, float = true })
+    vim.diagnostic.jump({ count = -1, float = true })
 end)
 
 -- navigating long warpped sentences / lines
-map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- typst export and previewing pdf
 map("n", "<leader>tp", ":TypstPreview<CR>", opts)
 
--- typst preview pdf in zathura
-map("n", "<leader>pf", ":!zathura %:r.pdf &<CR>", opts)
-
 -- format buffer without saving
 map("n", "<leader>bf", function()
-  vim.lsp.buf.format({ async = true })
+    vim.lsp.buf.format({ async = true })
 end, opts)
 
 -- start/stop liveserver
@@ -60,19 +59,11 @@ map("n", "<leader>st", "<cmd>LiveServerStop<cr>")
 -- toggle lsp text
 local text_on = true
 map("n", "<leader>lt", function()
-  text_on = not text_on
-  vim.diagnostic.config({ virtual_text = text_on })
-  if text_on then
-    print("diagnostics on")
-    -- vim.diagnostic.config({ signs = true })
-  else
-    print("diagnostics off")
-    -- vim.diagnostic.config({ signs = false })
-  end
+    text_on = not text_on
+    vim.diagnostic.config({ virtual_text = text_on })
+    if text_on then
+        print("diagnostics on")
+    else
+        print("diagnostics off")
+    end
 end)
-map("n", "<leader>e", function()
-  require("oil").toggle_float()
-end, opts)
-
--- clear current search
--- map({ "n", "v" }, "<Esc><Esc>", "<cmd>noh<cr>", opts)

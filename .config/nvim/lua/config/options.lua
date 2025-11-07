@@ -10,15 +10,15 @@ vim.opt.fillchars:append({ eob = " " })
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "python", "c", "java" },
+    pattern = { "python", "c", "java", "cpp", "typst" },
     callback = function()
         vim.opt.tabstop = 4
         vim.opt.shiftwidth = 4
@@ -51,5 +51,40 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
     callback = function()
         vim.highlight.on_yank()
+    end,
+})
+
+vim.api.nvim_create_autocmd("BufNewFile", {
+    pattern = "*.typ",
+    desc = "Insert Typst template for new files",
+    callback = function(ev)
+        if vim.api.nvim_buf_line_count(ev.buf) > 1 or vim.api.nvim_buf_get_lines(ev.buf, 0, 1, false)[1] ~= "" then
+            return
+        end
+
+        local template = {
+            '#import "preamble.typ": *',
+            '',
+            '#set text(font: "New Computer Modern", size: 11pt, lang: "en")',
+            '#set page(',
+            '    paper: "us-letter",',
+            '    margin: (top: 1in, bottom: 1in, left: 1in, right: 1in),',
+            '    footer: context {',
+            '        set align(center)',
+            '        set text(size: 9pt)',
+            '        str(here().page())',
+            '    }',
+            ')',
+            '#header(',
+            '    class: "Math 1600",',
+            '    sem: "Fall 2025",',
+            '    type: "Homework X"',
+            ')',
+            '',
+        }
+
+        vim.api.nvim_buf_set_lines(ev.buf, 0, -1, false, template)
+
+        vim.api.nvim_win_set_cursor(0, { #template, 0 })
     end,
 })
