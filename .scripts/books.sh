@@ -1,22 +1,6 @@
 #!/usr/bin/env bash
 
-BOOKS="$HOME/downloads/books"
+paths=("$HOME/downloads/books" "$HOME/Downloads" "$HOME/school")
+selected=$(find "${paths[@]}" -type f -name "*.pdf" -printf "%f\n" | sort -u | rofi -dmenu -p "" -i)
 
-
-book_files=($(ls "$BOOKS"))
-
-for i in "${!book_files[@]}"; do
-    echo "$((i+1)). ${book_files[$i]}"
-done
-
-echo -n "what about book do you want to read (enter index): "
-read book_choice
-
-if [[ "$book_choice" -gt 0 && "$book_choice" -le "${#book_files[@]}" ]]; then
-    selected_book="${BOOKS}/${book_files[$((book_choice - 1))]}"
-    
-    echo "you selected: $selected_book"
-    exec nohup zathura $selected_book > /dev/null 2>&1
-else
-    echo "invalid selection."
-fi
+[ -n "$selected" ] && zathura "$(find "${paths[@]}" -type f -name "$selected" -print -quit)"
