@@ -1,6 +1,6 @@
 #### PRELOAD #### 
 
-fastfetch
+# fastfetch
 
 
 #### PLUGINS #### 
@@ -45,9 +45,14 @@ alias ls='ls --color=auto --format=single-column'
 alias update='sudo pacman -Syu; yay -Syu'
 alias cleanup='sudo pacman -Scc; yay -Scc'
 
-alias sf=$HOME/.scripts/search.sh
 alias opr=$HOME/.scripts/github.sh
-alias notes='mkdir -p $HOME/notes && nvim $HOME/notes/$(date +"note-%h-%d-%Y-%s").typ'
+# alias notes='mkdir -p $HOME/school-notes/ && nvim $HOME/school-notes/$(date +"note-%h-%d-%Y-%s").typ'
+alias notes='mkdir -p $HOME/school-notes/ && cd $HOME/school-notes/ && nvim .'
+
+osage() {
+    echo "$(( ($(date +%s) - $(stat -c %Y /etc/os-release)) / 86400 )) days"
+}
+
 
 cd() {
   case "$1" in
@@ -62,11 +67,13 @@ cd() {
 
 #### ENV ####
 
-export PS1='%n@%m:%~ %# '
+export PS1='[%n@%m:%~] %# '
 export MANPAGER='nvim +Man!'
 export PATH="$HOME/.scripts:$PATH"
+
 export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
