@@ -33,14 +33,14 @@ set statusbar-fg                "#f8f8f2"
 set highlight-color             "#ffffff00" 
 set highlight-active-color      "#ff79c6" 
 
-set default-bg                  "#101010" 
+set default-bg                  "#161616" 
 set default-fg                  "#f8f8f200" 
 
 set render-loading              true
 set render-loading-fg           "#282a36ff"
 set render-loading-bg           "#f8f8f2" 
 
-set recolor-lightcolor          "#101010"
+set recolor-lightcolor          "#161616"
 set recolor-darkcolor           "#f8f8f2"
 
 
