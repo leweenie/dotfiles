@@ -1,116 +1,125 @@
 {
-	"position": "top",
-	"spacing": 0,
-	"height": 0,
-	"margin-top": 0,
-	"margin-right": 0,
-	"margin-bottom": 0,
-	"margin-left": 0,
-
-	"modules-left": [
-    "hyprland/workspaces"
-  ],
-	"modules-center": [
-    "clock"
-  ],
-	"modules-right": [
-		"tray",
-    "custom/separator",
-		"bluetooth",
-    "custom/separator",
-		"cpu",
-    "custom/separator",
-		"memory",
-    "custom/separator",
-		"pulseaudio",
-    "custom/separator",
-		"network",
-    "custom/separator",
-		"battery"
-	],
-
-	"hyprland/workspaces": {
-		"disable-scroll": true,
-		"all-outputs": true,
-		"tooltip": false
-	},
-
-  "hyprland/window": {
-    "max-length": 40,
-    "format": "{}",
-    "rewrite": {
-      "(.*) - Mozilla Firefox": "🌎 $1",
-      "(.*) - zsh": "> [$1]"
+    "position": "top",
+    "spacing": 0,
+    "height": 0,
+    "margin-top": 0,
+    "margin-right": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/separator",
+        "custom/player"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "custom/separator",
+        "custom/weather",
+        "custom/separator",
+        "bluetooth",
+        "custom/separator",
+        "cpu",
+        "custom/separator",
+        "memory",
+        "custom/separator",
+        "pulseaudio",
+        "custom/separator",
+        "network",
+        "custom/separator",
+        "battery"
+    ],
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "tooltip": false
+    },
+    "hyprland/window": {
+        "max-length": 40,
+        "format": "{}",
+        "rewrite": {
+            "(.*) - Mozilla Firefox": "🌎 $1",
+            "(.*) - zsh": "> [$1]"
+        }
+    },
+    "custom/player": {
+        "format": "󰎇 {}",
+        "format-paused": "now playing: {} (paused) ",
+        "exec": "playerctl -p spotify metadata --format '{{ artist }} - {{ title }}'",
+        "on-click": "playerctl -p spotify play-pause",
+        "interval": 1,
+        "tooltip": false,
+        "max-length": 60
+    },
+    "custom/separator": {
+        // "format": "::",
+        "format": "|",
+        "tooltip": false
+    },
+    "tray": {
+        "spacing": 10,
+        "icon-size": 12,
+        "tooltip": false
+    },
+    "clock": {
+        "format": "{:%a %d, %I:%M %p}",
+        "tooltip": false
+    },
+    "cpu": {
+        "format": "cpu {usage}%",
+        "interval": 2,
+        "states": {
+            "critical": 90
+        }
+    },
+    "memory": {
+        "format": "mem {percentage}%",
+        "interval": 2,
+        "states": {
+            "critical": 80
+        }
+    },
+    "battery": {
+        "format": "bat {capacity}%",
+        "interval": 1,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+    "network": {
+        "format-wifi": "net {}",
+        "format-ethernet": "net [eth] {}",
+        "format-disconnected": "net down",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "max-volume": 150,
+        "format": "vol {volume}%",
+        "format-bluetooth": "vol {volume}%",
+        "format-muted": "vol muted",
+        "nospacing": 1,
+        "tooltip": false
+    },
+    "bluetooth": {
+        // ""
+        "format": "bt {status}",
+        "format-connected": "bt {device_alias}",
+        "format-connected-battery": "bt {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+    "custom/weather": {
+        "format": "wt {}°",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "wttrbar",
+        "return-type": "json"
     }
-  },
-
-  "custom/separator": {
-    "format": "::",
-		"tooltip": false
-  },
-
-	"tray": {
-		"spacing": 10,
-    "icon-size": 12,
-		"tooltip": false
-	},
-
-	"clock": {
-		"format": "{:%a %d, %I:%M %p}",
-		"tooltip": false
-	},
-
-	"cpu": {
-		"format": "cpu {usage}%",
-		"interval": 2,
-
-		"states": {
-			"critical": 90
-		}
-	},
-
-	"memory": {
-		"format": "mem {percentage}%",
-		"interval": 2,
-
-		"states": {
-			"critical": 80
-		}
-	},
-
-	"battery": {
-		"format": "bat {capacity}%",
-		"interval": 1,
-		"states": {
-			"warning": 20,
-			"critical": 10
-		},
-		"tooltip": false
-	},
-
-	"network": {
-		"format-wifi": "wifi up",
-		"format-ethernet": "enth up",
-		"format-disconnected": "no network",
-		"tooltip": false
-	},
-
-	"pulseaudio": {
-		"scroll-step": 5,
-		"max-volume": 150,
-		"format": "vol {volume}%",
-		"format-bluetooth": "vol {volume}%",
-		"nospacing": 1,
-		"tooltip": false
-	},
-
-	"bluetooth": {
-		"format": " {status}",
-		"format-connected": " {device_alias}",
-		"format-connected-battery": " {device_alias} {device_battery_percentage}%",
-		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-	}
 }
