@@ -11,10 +11,12 @@ return {
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "lua_ls",
+                    "bashls",
                     "jdtls",
                     "clangd",
                     "basedpyright",
                     "tinymist",
+                    "jsonls",
                 },
             })
         end,
@@ -41,39 +43,16 @@ return {
         },
         opts_extend = { "sources.default" },
     },
-    {
-        "folke/lazydev.nvim",
-        ft = "lua",
-        opts = {
-            library = {
-                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-            },
-        },
-        integrations = {
-            lspconfig = true,
-        },
-    },
-
-    -- Then your lua_ls config
-    vim.lsp.config('lua_ls', {
-        root_dir = function(bufnr, on_dir)
-            local root = vim.fs.root(bufnr,
-                { '.luarc.json', '.luarc.jsonc', '.luacheckrc', '.stylua.toml', 'stylua.toml', 'selene.toml',
-                    'selene.yml', '.git' })
-            if root then
-                on_dir(root)
-            else
-                on_dir(vim.fn.getcwd())
-            end
-        end
-    }),
 
     vim.lsp.enable({
         "lua_ls",
         "jdtls",
+        "bashls",
+        "gopls",
         "clangd",
         "basedpyright",
         "tinymist",
+        "jsonls",
     }),
 
 

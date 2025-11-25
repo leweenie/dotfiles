@@ -69,7 +69,6 @@ return {
             require("toggleterm").setup({
                 direction = "float",
                 size = 10,
-                -- open_mapping = [[<c-\>]],
             })
 
             vim.keymap.set({ "i", "n", "t" }, "<A-\\>", function()
@@ -105,7 +104,7 @@ return {
     },
     {
         "sphamba/smear-cursor.nvim",
-        enabled = false,
+        enabled = true,
         opts = {
             smear_between_buffers = true,
             smear_between_neighbor_lines = true,
@@ -183,19 +182,83 @@ return {
     },
     {
         'folke/flash.nvim',
+        enabled = false,
         event = "VeryLazy",
         keys = {
             { 's', mode = 'n', function() require('flash').jump() end }
         }
     },
+
     {
-        'norcalli/nvim-colorizer.lua',
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies = 'nvim-tree/nvim-web-devicons',
         config = function()
-            require('colorizer').setup({
-                css = {
-                    mode = 'background',
+            require("bufferline").setup({
+                options = {
+                    indicator = {
+                        icon = 'underline',
+                    },
+                    themeable = true,
+                    diagnostics = "none",
+                    tab_size = 20,
+                    max_name_length = 20,
+                    color_icons = false,
+                    separator_style = "slant",
+                    always_show_bufferline = true,
+                    auto_toggle_bufferline = true,
+                    show_buffer_icons = true,
+                    show_buffer_close_icons = false,
+                    hover = {
+                        enabled = true,
+                        delay = 200,
+                        reveal = { 'close' }
+                    },
+                    modified_icon = '[+]',
+
+                },
+                highlights = {
+                    buffer_selected = {
+                        italic = true,
+                    }
                 }
             })
+        end,
+    },
+    {
+        "goolord/alpha-nvim",
+        -- dependencies = { 'nvim-mini/mini.icons' },
+        dependencies = {
+            "rmagatti/auto-session",
+            config = function()
+                require("auto-session").setup({
+                    auto_restore = false,
+                    -- auto_restore_last_session = true,
+                })
+                vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+            end,
+        },
+        config = function()
+            local alpha = require("alpha")
+            local dashboard = require("alpha.themes.dashboard")
+
+            dashboard.section.header.val = {
+                "      ",
+                "      ",
+                "neovim",
+                "      ",
+                "      ",
+            }
+
+            dashboard.section.buttons.val = {
+                dashboard.button("n", "  new file", ":ene<CR>"),
+                dashboard.button("s", "  restore session", ":AutoSession restore<CR>"),
+                dashboard.button("q", "  quit", ":qa!<CR>"),
+            }
+
+            alpha.setup(dashboard.opts)
+
+            vim.cmd([[ autocmd FileType alpha setlocal nofoldenable ]])
         end,
     },
 }

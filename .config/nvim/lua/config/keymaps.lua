@@ -41,8 +41,8 @@ map("n", "<C-p>", function()
 end)
 
 -- navigating long warpped sentences / lines
--- map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
--- map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- typst export and previewing pdf
 map("n", "<leader>tp", ":TypstPreview<CR>", opts)
@@ -67,3 +67,16 @@ map("n", "<leader>lt", function()
         print("diagnostics off")
     end
 end)
+
+-- exit term mode
+map('t', "<esc><esc>", "<C-\\><C-N>", opts)
+
+local flag = true
+map('n', "<C-S-Up>", function()
+    flag = not flag
+    if flag then
+        vim.opt.cmdheight = 1
+    else
+        vim.opt.cmdheight = 0
+    end
+end, opts)

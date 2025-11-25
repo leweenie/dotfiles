@@ -28,6 +28,8 @@ return {
             vim.keymap.set('n', '<leader>ff', function() require('fzf-lua').files({ cwd = '$HOME' }) end, opts)
             vim.keymap.set('n', '<leader>fr', function() require('fzf-lua').oldfiles({}) end, opts)
             vim.keymap.set('n', '<leader>fg', function() require('fzf-lua').live_grep({}) end, opts)
+            vim.keymap.set('n', '<leader>fh', function() require('fzf-lua').helptags({}) end, opts)
+            vim.keymap.set('n', '<leader>cs', function() require('fzf-lua').colorschemes({}) end, opts)
             vim.keymap.set('n', '<leader>fc', function() require('fzf-lua').files({ cwd = '$HOME/.config/nvim' }) end,
                 opts)
         end
