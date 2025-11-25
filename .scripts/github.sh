@@ -5,7 +5,7 @@ if git rev-parse --is-inside-work-tree &>/dev/null; then
     if [[ $repo_url =~ ^git@github.com: ]]; then
         repo_url="https://github.com/${repo_url#git@github.com:}"
     fi
-    chromium "$repo_url" >/dev/null 2>&1 &
+    firefox "$repo_url" >/dev/null 2>&1 &
 else
-    echo "not inside a git repository" 
+    echo "not inside a git repository"
 fi
