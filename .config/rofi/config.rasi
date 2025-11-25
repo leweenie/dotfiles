@@ -3,14 +3,14 @@
     scrollbar: false;
 
     gruvbox-dark-bg0-hard:     #101010;
-    gruvbox-dark-bg2:          #285577;
-    gruvbox-dark-fg0:          #fbf1c7;
-    gruvbox-dark-fg1:          #ebdbb2;
+    gruvbox-dark-bg2:          #222222;
+    gruvbox-dark-fg0:          #F8F8F2;
+    gruvbox-dark-fg1:          #F8F8F2;
     gruvbox-dark-red-dark:     #cc241d;
     gruvbox-dark-red-light:    #fb4934;
     gruvbox-dark-yellow-dark:  #d79921;
     gruvbox-dark-yellow-light: #fabd2f;
-    gruvbox-dark-gray:         #4C7899;
+    gruvbox-dark-gray:         #222222;
 
     background:                  rgba(16, 16, 16, 1);
     background-color:            @background;
