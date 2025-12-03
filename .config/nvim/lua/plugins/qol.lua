@@ -104,7 +104,7 @@ return {
     },
     {
         "sphamba/smear-cursor.nvim",
-        enabled = true,
+        enabled = false,
         opts = {
             smear_between_buffers = true,
             smear_between_neighbor_lines = true,
@@ -191,13 +191,14 @@ return {
 
     {
         'akinsho/bufferline.nvim',
+        enabled = true,
         version = "*",
         dependencies = 'nvim-tree/nvim-web-devicons',
         config = function()
             require("bufferline").setup({
                 options = {
                     indicator = {
-                        icon = 'underline',
+                        icon = '',
                     },
                     themeable = true,
                     diagnostics = "none",
@@ -215,13 +216,17 @@ return {
                         reveal = { 'close' }
                     },
                     modified_icon = '[+]',
-
                 },
                 highlights = {
-                    buffer_selected = {
-                        italic = true,
-                    }
-                }
+                    background = {      -- inactive buffers
+                        fg = '#666666', -- text color for inactive buffers
+                        bg = 'none',    -- background (transparent)
+                    },
+                    buffer_visible = {  -- visible but not selected
+                        fg = '#888888',
+                        bg = 'none',
+                    },
+                },
             })
         end,
     },
@@ -260,5 +265,12 @@ return {
 
             vim.cmd([[ autocmd FileType alpha setlocal nofoldenable ]])
         end,
+    },
+
+    {
+        'linrongbin16/lsp-progress.nvim',
+        config = function()
+            require('lsp-progress').setup()
+        end
     },
 }

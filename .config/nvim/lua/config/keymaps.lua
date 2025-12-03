@@ -80,3 +80,6 @@ map('n', "<C-S-Up>", function()
         vim.opt.cmdheight = 0
     end
 end, opts)
+
+-- duplicate line/selection down
+map({ 'n', 'v' }, '<A-S-j>', ":t.<cr>", opts)

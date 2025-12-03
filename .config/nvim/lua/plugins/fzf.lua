@@ -32,6 +32,7 @@ return {
             vim.keymap.set('n', '<leader>cs', function() require('fzf-lua').colorschemes({}) end, opts)
             vim.keymap.set('n', '<leader>fc', function() require('fzf-lua').files({ cwd = '$HOME/.config/nvim' }) end,
                 opts)
+            vim.keymap.set('n', '<leader>f.', function() require('fzf-lua').files({}) end, opts)
         end
     }
 }

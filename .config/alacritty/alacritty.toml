@@ -2,16 +2,16 @@
 padding.x = 5
 padding.y = 5
 
-# opacity = 0.95
+opacity = 0.95
 
 [font]
 
-size = 12.5
+# size = 12.5
 normal.family = "JetBrains Mono Nerd Font"
 italic.family = "JetBrains Mono Nerd Font"
 bold.family = "JetBrains Mono Nerd Font"
 
-# size = 13.5
+size = 6
 # normal.family = "UbuntuMono Nerd Font"
 # italic.family = "UbuntuMono Nerd Font"
 # bold.family = "UbuntuMono Nerd Font"
@@ -47,4 +47,4 @@ white = "#f9f8f5"
 
 [colors.cursor]
 text = "#272822"
-cursor = "#f8f8f2"
+cursor = "#D97757"

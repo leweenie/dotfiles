@@ -38,7 +38,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 #### ALIASES #### 
 
 alias vi='nvim'
-alias f='fastfetch';
+alias f='fastfetch -s os:host:kernel:uptime:packages:shell:display:wm:cpu:gpu:memory:disk:localip -l none';
 alias so='source ~/.zshrc'
 alias ls='ls --color=auto --format=single-column'
 
@@ -48,6 +48,7 @@ alias cleanup='sudo pacman -Scc; yay -Scc'
 alias opr=$HOME/.scripts/github.sh
 # alias notes='mkdir -p $HOME/school-notes/ && nvim $HOME/school-notes/$(date +"note-%h-%d-%Y-%s").typ'
 alias notes='mkdir -p $HOME/school-notes/ && cd $HOME/school-notes/ && nvim .'
+alias lt='tree -C'
 
 osage() {
     echo "$(( ($(date +%s) - $(stat -c %Y /etc/os-release)) / 86400 )) days"

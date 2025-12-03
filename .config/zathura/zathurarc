@@ -44,5 +44,6 @@ set recolor-lightcolor          "#161616"
 set recolor-darkcolor           "#f8f8f2"
 
 
-set adjust-open best-fit
+set adjust-open "true"
+set dpi 144
 set recolor true
